@@ -105,7 +105,7 @@
 
         <!-- Action Button -->
         <div class="flex items-center gap-4">
-          <button
+          <button onclick="openModal()"
             class="relative group overflow-hidden px-6 py-1 md:px-4 md:py-1.5 rounded-xl transition-all active:scale-95">
             <!-- Button Background with Gradient -->
             <div
@@ -1900,6 +1900,156 @@
     });
 
     window.addEventListener('resize', handleScroll);
+  </script>
+
+  <!-- Enrollment Modal -->
+  <div id="enrollment-modal"
+    class="fixed inset-0 z-[200] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div
+      class="relative w-full max-w-xl bg-white rounded-[10px] shadow-2xl overflow-hidden border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <!-- Modal Header -->
+      <div
+        class="bg-gradient-to-r from-[#0A2540] to-[#1e293b] py-4 px-6 flex items-center justify-between border-b border-slate-800 sticky top-0 z-10">
+        <h3 class="text-white font-medium text-[20px] leading-tight capitalize tracking-tight">
+          Start Your Animation & Film Career
+        </h3>
+        <button id="close-modal"
+          class="text-white hover:text-[#F58220] transition-colors p-2 rounded-lg hover:bg-white/10">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <form id="modal-enrollment-form" class="p-4 flex flex-wrap items-start gap-10">
+        <div class="w-full flex flex-col gap-y-4">
+          <!-- Input Name -->
+          <div class="flex flex-col gap-2">
+            <input type="text" placeholder="Enter your name" name="name"
+              class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 placeholder:text-slate-400"
+              required />
+          </div>
+
+          <!-- Input Number -->
+          <div class="flex flex-col gap-2">
+            <input type="tel" placeholder="Enter your mobile number" name="mobile"
+              class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 placeholder:text-slate-400"
+              required />
+          </div>
+
+          <!-- Input Email Id -->
+          <div class="flex flex-col gap-2">
+            <input type="email" placeholder="Enter your email address" name="email"
+              class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 placeholder:text-slate-400"
+              required />
+          </div>
+
+          <!-- Select Qualification -->
+          <div class="flex flex-col gap-2">
+            <div class="relative">
+              <select name="qualification"
+                class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 appearance-none cursor-pointer"
+                required>
+                <option value="" disabled selected>Select Qualification</option>
+                <option value="12th">12th Pass</option>
+                <option value="diploma">Diploma Holder</option>
+                <option value="graduate">Any Graduate</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Select Brand -->
+          <div class="flex flex-col gap-2 md:col-span-2">
+            <div class="relative">
+              <select name="brand"
+                class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 appearance-none cursor-pointer"
+                required>
+                <option value="" disabled selected>Select Brand</option>
+                <option value="vtu_main">VTU Main Campus</option>
+                <option value="vtu_digital">VTU Digital Center</option>
+                <option value="partner_brand">Institutional Partner</option>
+              </select>
+              <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Right Section: Submit -->
+          <div class="w-full flex flex-col gap-8 self-center">
+            <button type="submit"
+              class="w-full bg-[#F58220] hover:bg-[#ff8c2b] text-white font-medium text-xl py-3 px-6 rounded-md flex items-center justify-center gap-3 transition-all shadow-[0_10px_40px_rgba(245,130,32,0.3)] active:scale-[0.97] hover:-translate-y-1">
+              Submit Application
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal JavaScript -->
+  <script>
+    // Modal functionality
+    const modal = document.getElementById('enrollment-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const modalForm = document.getElementById('modal-enrollment-form');
+
+    // Function to open modal
+    function openModal() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Function to close modal
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal button
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', closeModal);
+    }
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // Form submission
+    if (modalForm) {
+      modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Application Submitted! (Simulation)');
+        closeModal();
+      });
+    }
+
+    // Make openModal function globally available for manual triggering
+    window.openModal = openModal;
   </script>
 </body>
 
