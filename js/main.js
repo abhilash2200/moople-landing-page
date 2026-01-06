@@ -1,10 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Header Scroll Effect
+  // --- Init & Utility ---
   const header = document.getElementById('main-header');
   const headerTitle = document.getElementById('header-title');
+  const marquee = document.getElementById('marquee-section');
+  const yearSpan = document.getElementById('year');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
+  // Set Footer Year
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // Optimized Scroll Handler (Handles both Header Style & Position)
+  const updateHeaderState = () => {
+    const scrollY = window.scrollY;
+
+    // 1. Header Styling (Blur/Transparency)
+    if (scrollY > 20) {
       header.classList.remove('py-3', 'bg-black/10', 'border-transparent');
       header.classList.add('py-3', 'bg-[#020617]/80', 'backdrop-blur-xl', 'border-slate-800/50', 'shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]');
       if (headerTitle) {
@@ -19,7 +30,35 @@ document.addEventListener('DOMContentLoaded', () => {
         headerTitle.classList.add('text-lg');
       }
     }
+
+    // 2. Header Position relative to Marquee
+    if (marquee) {
+      const marqueeRect = marquee.getBoundingClientRect();
+      if (marqueeRect.bottom <= 0) {
+        header.style.top = '0px';
+      } else {
+        header.style.top = `${marquee.offsetHeight}px`;
+      }
+    }
+  };
+
+  // Scroll Event Listener with requestAnimationFrame
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateHeaderState();
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
+
+  // Handle Resize for Marquee logic
+  window.addEventListener('resize', updateHeaderState);
+
+  // Initial Call
+  updateHeaderState();
 
   // Enrollment Form
   const form = document.getElementById('enrollment-form');
@@ -150,15 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // Enquire Buttons Scroll
-  const enquireBtns = document.querySelectorAll('button');
-  enquireBtns.forEach(btn => {
-    if (btn.innerText.includes('Enquire Now') || btn.innerText.includes('Admission Open') || btn.innerText.includes('Enroll Today') || btn.innerText.includes('REACH OUT')) {
-      btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-  });
+
 
   // --- Modal Logic ---
   const modal = document.getElementById('enrollment-modal');

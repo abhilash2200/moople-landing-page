@@ -57,34 +57,8 @@
       animation: marquee 30s linear infinite;
     }
 
-    /* Modal dropdown fixes */
-    #enrollment-modal {
-      z-index: 200;
-    }
-
-    #modal-content {
-      z-index: 201;
-      position: relative;
-    }
-
-    /* Ensure selects work properly - don't clip dropdown options */
-    #enrollment-modal select {
-      z-index: 50;
-      position: relative;
-    }
-
-    #enrollment-modal select:focus {
-      z-index: 100;
-      position: relative;
-    }
-
-    /* Allow overflow for select containers so dropdowns aren't clipped */
-    #enrollment-modal .select-container {
-      overflow: visible !important;
-    }
-
-    #enrollment-modal .select-container .relative {
-      overflow: visible !important;
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
     }
   </style>
 </head>
@@ -1797,43 +1771,6 @@
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
-  <script>
-    // Handle header position based on marquee scroll
-    const header = document.getElementById('main-header');
-    const marquee = document.getElementById('marquee-section');
-
-    function handleScroll() {
-      const marqueeRect = marquee.getBoundingClientRect();
-      const scrollPosition = window.scrollY;
-
-      if (marqueeRect.bottom <= 0) {
-        // Marquee is scrolled past, move header to top
-        header.style.top = '0px';
-      } else {
-        // Marquee is visible, keep header below marquee
-        header.style.top = marquee.offsetHeight + 'px';
-      }
-    }
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Initial call to set correct position
-    handleScroll();
-
-    // Listen for scroll events with throttling for better performance
-    let ticking = false;
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(function () {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-
-    window.addEventListener('resize', handleScroll);
-  </script>
 
   <!-- Enrollment Modal -->
   <div id="enrollment-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true"
@@ -1879,10 +1816,10 @@
           </div>
 
           <!-- Select Qualification -->
-          <div class="flex flex-col gap-2 select-container">
-            <div class="relative z-50">
+          <div class="flex flex-col gap-2 select-container overflow-visible">
+            <div class="relative z-50 overflow-visible">
               <select name="qualification"
-                class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 appearance-none cursor-pointer relative z-50"
+                class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 appearance-none cursor-pointer relative z-50 focus:z-[100]"
                 required>
                 <option value="" disabled selected>Select Qualification</option>
                 <option value="12th">12th Pass</option>
@@ -1899,10 +1836,10 @@
           </div>
 
           <!-- Select Brand -->
-          <div class="flex flex-col gap-2 md:col-span-2 select-container">
-            <div class="relative z-50">
+          <div class="flex flex-col gap-2 md:col-span-2 select-container overflow-visible">
+            <div class="relative z-50 overflow-visible">
               <select name="brand"
-                class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 appearance-none cursor-pointer relative z-50"
+                class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 appearance-none cursor-pointer relative z-50 focus:z-[100]"
                 required>
                 <option value="" disabled selected>Select Brand</option>
                 <option value="brand_name">Brand Name</option>
