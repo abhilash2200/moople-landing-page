@@ -159,4 +159,118 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // --- Modal Logic ---
+  const modal = document.getElementById('enrollment-modal');
+  const modalContent = document.getElementById('modal-content');
+  const closeModalBtn = document.getElementById('close-modal');
+  const modalForm = document.getElementById('modal-enrollment-form');
+  let firstFocusableElement = null;
+  let lastFocusableElement = null;
+  let triggerElement = null;
+
+  function preventBodyScroll() {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function restoreBodyScroll() {
+    document.body.style.paddingRight = '';
+    document.body.style.overflow = '';
+  }
+
+  function trapFocus(e) {
+    if (e.key === 'Tab') {
+      if (e.shiftKey) { // Shift + Tab
+        if (document.activeElement === firstFocusableElement) {
+          e.preventDefault();
+          lastFocusableElement.focus();
+        }
+      } else { // Tab
+        if (document.activeElement === lastFocusableElement) {
+          e.preventDefault();
+          firstFocusableElement.focus();
+        }
+      }
+    }
+  }
+
+  function openModal() {
+    if (!modal) return;
+    triggerElement = document.activeElement; // Store trigger
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    modal.setAttribute('aria-hidden', 'false');
+
+    preventBodyScroll();
+
+    // Focus Management
+    const focusableContent = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusableContent.length > 0) {
+      firstFocusableElement = focusableContent[0];
+      lastFocusableElement = focusableContent[focusableContent.length - 1];
+      // Focus the name input preferably, or the first element
+      const nameInput = modal.querySelector('input[name="name"]');
+      if (nameInput) {
+        nameInput.focus();
+      } else {
+        firstFocusableElement.focus();
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      modal.setAttribute('aria-hidden', 'true');
+      restoreBodyScroll();
+      document.removeEventListener('keydown', handleKeyDown);
+
+      // Restore focus
+      if (triggerElement && typeof triggerElement.focus === 'function') {
+        triggerElement.focus();
+      }
+    }
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    } else {
+      trapFocus(e);
+    }
+  }
+
+  // Event Listeners
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeModal();
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  if (modalForm) {
+    modalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Application Submitted! (Simulation)');
+      closeModal();
+      modalForm.reset();
+    });
+  }
+
+  // Expose to window for inline HTML onclick handlers
+  window.openModal = openModal;
 });
