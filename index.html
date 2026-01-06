@@ -42,15 +42,52 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
   </style>
 </head>
 
 <body class="text-slate-900 selection:bg-orange-500 selection:text-white overflow-x-hidden">
 
   <main>
+    <!-- Marquee Section -->
+    <div id="marquee-section"
+      class="relative bg-[#F58220] text-white py-3 overflow-hidden border-b border-[#F58220]/20">
+      <div class="flex animate-marquee whitespace-nowrap">
+        <div class="flex items-center gap-8 px-8">
+          <span class="font-semibold text-sm md:text-base"> Admission Open Now</span>
+          <span class="font-semibold text-sm md:text-base"> Industry Expert Faculty</span>
+          <span class="font-semibold text-sm md:text-base"> 100% Placement Support</span>
+          <span class="font-semibold text-sm md:text-base"> Hands-on Learning</span>
+          <span class="font-semibold text-sm md:text-base"> AI-Integrated Curriculum</span>
+          <span class="font-semibold text-sm md:text-base"> Advanced Infrastructure</span>
+        </div>
+        <div class="flex items-center gap-8 px-8" aria-hidden="true">
+          <span class="font-semibold text-sm md:text-base"> Admission Open Now</span>
+          <span class="font-semibold text-sm md:text-base"> Industry Expert Faculty</span>
+          <span class="font-semibold text-sm md:text-base"> 100% Placement Support</span>
+          <span class="font-semibold text-sm md:text-base"> Hands-on Learning</span>
+          <span class="font-semibold text-sm md:text-base"> AI-Integrated Curriculum</span>
+          <span class="font-semibold text-sm md:text-base"> Advanced Infrastructure</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Header -->
     <header id="main-header"
-      class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 border-b py-6 bg-transparent border-transparent">
+      class="fixed top-[48px] left-0 right-0 z-[100] transition-all duration-500 border-b py-6 bg-transparent border-transparent">
       <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center">
         <!-- Logo & University Info -->
         <div class="flex items-center gap-4 group cursor-pointer">
@@ -127,7 +164,7 @@
         class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none">
       </div>
 
-      <div class="relative z-10 flex flex-col pt-24 md:pt-32">
+      <div class="relative z-10 flex flex-col pt-32 md:pt-40">
         <!-- Hero section -->
         <section class="container mx-auto px-4 mb-28">
           <div class="flex flex-wrap justify-between">
@@ -1857,6 +1894,41 @@
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
+  <script>
+    // Handle header position based on marquee scroll
+    const header = document.getElementById('main-header');
+    const marquee = document.getElementById('marquee-section');
+
+    function handleScroll() {
+      const marqueeRect = marquee.getBoundingClientRect();
+      const scrollPosition = window.scrollY;
+
+      if (marqueeRect.bottom <= 0) {
+        // Marquee is scrolled past, move header to top
+        header.style.top = '0px';
+      } else {
+        // Marquee is visible, keep header below marquee
+        header.style.top = marquee.offsetHeight + 'px';
+      }
+    }
+
+    // Initial call to set correct position
+    handleScroll();
+
+    // Listen for scroll events with throttling for better performance
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    window.addEventListener('resize', handleScroll);
+  </script>
 </body>
 
 </html>
