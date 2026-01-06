@@ -1557,154 +1557,48 @@
             </div>
 
             <div class="relative">
-              <div id="stories-list" class="flex gap-8 overflow-x-auto scrollbar-hide pb-10 px-1 snap-x snap-mandatory"
+              <div id="stories-list" class="flex gap-6 overflow-x-auto scrollbar-hide pb-6 px-1 snap-x snap-mandatory"
                 style="-ms-overflow-style: none; scrollbar-width: none;">
                 <!-- Video Cards Loop -->
                 <!-- Video 1 -->
-                <div class="flex-shrink-0 w-[280px] md:w-[320px] snap-center video-card">
-                  <div class="relative bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xl group">
-                    <!-- Video Element -->
-                    <div class="relative aspect-[9/16] bg-black">
-                      <video src="https://www.w3schools.com/html/mov_bbb.mp4"
-                        poster="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop"
-                        class="w-full h-full object-cover" playsinline data-duration="3:15"></video>
-
-                      <!-- Play Button Overlay -->
-                      <div
-                        class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors play-btn cursor-pointer">
-                        <div
-                          class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-xl transition-transform group-hover:scale-110">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white ml-1" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                              clip-rule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-
-                      <!-- Pause Overlay (Hidden initially) -->
-                      <div class="absolute inset-0 bg-transparent cursor-pointer video-overlay" style="display: none;">
-                      </div>
-
-                      <!-- Top Gradient -->
-                      <div
-                        class="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black/80 to-transparent pointer-events-none">
-                      </div>
-
-                      <!-- Bottom Gradient & Info -->
-                      <div
-                        class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black via-black/90 to-transparent">
-                        <h4 class="text-white font-bold text-lg mb-0.5">Rahul Verma</h4>
-                        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-4">3D Animator @
-                          Technicolor</p>
-
-                        <!-- Controls -->
-                        <div class="flex items-center gap-3">
-                          <button class="text-white hover:text-[#F58220] transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 play-icon" viewBox="0 0 20 20"
-                              fill="currentColor">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </button>
-                          <div class="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#F58220] w-0 progress-bar-fill"></div>
-                          </div>
-                          <span class="text-white text-[10px] font-bold time-display">0:00 / 3:15</span>
-                        </div>
-                      </div>
+                <div class="flex-shrink-0 w-[320px] md:w-[360px] snap-center">
+                  <div
+                    class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative aspect-[16/9] bg-black">
+                      <video src="assets/Debraj-testimonials.mp4" poster="assets/debraj-thumbnail.webp"
+                        class="w-full h-full object-cover" playsinline controls></video>
                     </div>
                   </div>
                 </div>
 
                 <!-- Video 2 -->
-                <div class="flex-shrink-0 w-[280px] md:w-[320px] snap-center video-card">
-                  <div class="relative bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xl group">
-                    <div class="relative aspect-[9/16] bg-black">
-                      <video src="https://www.w3schools.com/html/mov_bbb.mp4"
-                        poster="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop"
-                        class="w-full h-full object-cover" playsinline data-duration="2:45"></video>
-                      <div
-                        class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors play-btn cursor-pointer">
-                        <div
-                          class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-xl transition-transform group-hover:scale-110">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white ml-1" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                              clip-rule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div class="absolute inset-0 bg-transparent cursor-pointer video-overlay" style="display: none;">
-                      </div>
-                      <div
-                        class="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black/80 to-transparent pointer-events-none">
-                      </div>
-                      <div
-                        class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black via-black/90 to-transparent">
-                        <h4 class="text-white font-bold text-lg mb-0.5">Priya Singh</h4>
-                        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-4">VFX Artist @ Prime
-                          Focus</p>
-                        <div class="flex items-center gap-3">
-                          <button class="text-white hover:text-[#F58220] transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 play-icon" viewBox="0 0 20 20"
-                              fill="currentColor">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </button>
-                          <div class="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#F58220] w-0 progress-bar-fill"></div>
-                          </div>
-                          <span class="text-white text-[10px] font-bold time-display">0:00 / 2:45</span>
-                        </div>
-                      </div>
+                <div class="flex-shrink-0 w-[320px] md:w-[360px] snap-center">
+                  <div
+                    class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative aspect-[16/9] bg-black">
+                      <video src="assets/Ranjita-testimonials.mp4" poster="assets/ranjita-thumbnail.webp"
+                        class="w-full h-full object-cover" playsinline controls></video>
                     </div>
                   </div>
                 </div>
 
                 <!-- Video 3 -->
-                <div class="flex-shrink-0 w-[280px] md:w-[320px] snap-center video-card">
-                  <div class="relative bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xl group">
-                    <div class="relative aspect-[9/16] bg-black">
-                      <video src="https://www.w3schools.com/html/mov_bbb.mp4"
-                        poster="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop"
-                        class="w-full h-full object-cover" playsinline data-duration="4:10"></video>
-                      <div
-                        class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors play-btn cursor-pointer">
-                        <div
-                          class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-xl transition-transform group-hover:scale-110">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white ml-1" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                              clip-rule="evenodd" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div class="absolute inset-0 bg-transparent cursor-pointer video-overlay" style="display: none;">
-                      </div>
-                      <div
-                        class="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black/80 to-transparent pointer-events-none">
-                      </div>
-                      <div
-                        class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black via-black/90 to-transparent">
-                        <h4 class="text-white font-bold text-lg mb-0.5">Arjun Das</h4>
-                        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-4">Motion Designer @
-                          Swiggy</p>
-                        <div class="flex items-center gap-3">
-                          <button class="text-white hover:text-[#F58220] transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 play-icon" viewBox="0 0 20 20"
-                              fill="currentColor">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </button>
-                          <div class="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#F58220] w-0 progress-bar-fill"></div>
-                          </div>
-                          <span class="text-white text-[10px] font-bold time-display">0:00 / 4:10</span>
-                        </div>
-                      </div>
+                <div class="flex-shrink-0 w-[320px] md:w-[360px] snap-center">
+                  <div
+                    class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative aspect-[16/9] bg-black">
+                      <video src="assets/Safan-testimonials.mp4" poster="assets/safan-thumbnail.webp"
+                        class="w-full h-full object-cover" playsinline controls></video>
+                    </div>
+                  </div>
+                </div>
+                <!-- Video 4 -->
+                <div class="flex-shrink-0 w-[320px] md:w-[360px] snap-center">
+                  <div
+                    class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative aspect-[16/9] bg-black">
+                      <video src="assets/Snehasish-testimonials.mp4" poster="assets/snehasish-thumbnail.webp"
+                        class="w-full h-full object-cover" playsinline controls></video>
                     </div>
                   </div>
                 </div>
@@ -1733,78 +1627,83 @@
 
         <!-- Contact Section -->
         <section class="py-10 bg-[#FFF8F0] relative overflow-hidden">
-          <div class="max-w-7xl mx-auto">
+          <div class="container px-4 mx-auto">
             <!-- Section Heading -->
-            <h2 class="text-4xl md:text-5xl lg:text-6xl   text-center text-[#020617] mb-16 tracking-tight">
+            <h2 class="text-[40px] leading-tight text-center text-[#020617] mb-6 tracking-tight">
               Reach <span class="text-[#F58220]">Out</span> To Us
             </h2>
 
             <!-- Contact Card -->
-            <div class="relative bg-white border border-slate-200 rounded-[40px] overflow-hidden shadow-xl">
+            <div
+              class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
               <!-- Subtle Grid Backdrop within the card -->
-              <div class="absolute inset-0 opacity-[0.05] pointer-events-none perspective-grid"></div>
+              <div class="absolute inset-0 opacity-[0.03] pointer-events-none perspective-grid"></div>
 
-              <div class="relative z-10 p-10 md:p-16 flex flex-col items-center">
+              <div class="relative z-10 p-8 md:p-12 lg:p-16">
                 <!-- Contact Details Grid -->
-                <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12 mb-12">
 
                   <!-- Address -->
-                  <div class="flex gap-6">
+                  <div class="group flex gap-4 md:gap-6 p-4 rounded-xl hover:bg-slate-50 transition-all duration-300">
                     <div class="flex-shrink-0">
                       <div
-                        class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center border border-orange-500/20 group">
+                        class="w-16 h-16 bg-[#F58220]/10 rounded-2xl flex items-center justify-center border border-[#F58220]/20 group-hover:bg-[#F58220]/20 group-hover:border-[#F58220]/40 transition-all duration-300 group-hover:scale-110">
                         <img src="https://cdn-icons-png.flaticon.com/512/3233/3233508.png"
                           class="w-8 h-8 filter brightness-110" alt="Building" />
                       </div>
                     </div>
-                    <div class="flex flex-col gap-2">
-                      <h4 class="text-slate-900 font-black text-lg leading-tight uppercase tracking-tight">
-                        Center for Online & <br /> Distance Education
+                    <div class="flex flex-col gap-2.5">
+                      <h4
+                        class="text-slate-900 font-bold text-lg md:text-xl leading-tight capitalize tracking-tight group-hover:text-[#F58220] transition-colors">
+                        Center for Online & Distance Education
                       </h4>
-                      <p class="text-slate-600 text-sm leading-relaxed font-medium">
-                        Visvesvaraya Technological University<br />
-                        Hanchya Sathagalli Layout<br />
-                        Ring Road, Mysuru, Karnataka - 570 029
+                      <p class="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
+                        Moople Academy<br />
+                        PS Srijan Maestro,<br />
+                        113G, Matheswartala Road<br />
+                        4th Floor Topsia, Kolkata: 700046
                       </p>
                     </div>
                   </div>
 
                   <!-- Email -->
-                  <div class="flex gap-6">
+                  <div class="group flex gap-4 md:gap-6 p-4 rounded-xl hover:bg-slate-50 transition-all duration-300">
                     <div class="flex-shrink-0">
                       <div
-                        class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20">
+                        class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20 group-hover:bg-blue-500/20 group-hover:border-blue-500/40 transition-all duration-300 group-hover:scale-110">
                         <img src="https://cdn-icons-png.flaticon.com/512/2103/2103533.png"
                           class="w-8 h-8 filter brightness-110" alt="Mail" />
                       </div>
                     </div>
-                    <div class="flex flex-col gap-2">
-                      <h4 class="text-slate-900 font-black text-lg leading-tight uppercase tracking-tight">
-                        Email address :
+                    <div class="flex flex-col gap-2.5">
+                      <h4
+                        class="text-slate-900 font-bold text-lg md:text-xl leading-tight capitalize tracking-tight group-hover:text-blue-600 transition-colors">
+                        Email Address
                       </h4>
-                      <a href="mailto:admissions@vtu-online.net"
-                        class="text-blue-400 hover:text-blue-300 transition-colors text-sm font-bold">
-                        admissions@vtu-online.net
+                      <a href="mailto:info@moople.in"
+                        class="text-blue-500 hover:text-[#F58220] transition-colors text-sm md:text-base font-semibold break-all">
+                        info@moople.in
                       </a>
                     </div>
                   </div>
 
                   <!-- Phone -->
-                  <div class="flex gap-6">
+                  <div class="group flex gap-4 md:gap-6 p-4 rounded-xl hover:bg-slate-50 transition-all duration-300">
                     <div class="flex-shrink-0">
                       <div
-                        class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/20">
+                        class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/20 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-all duration-300 group-hover:scale-110">
                         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
                           class="w-8 h-8 filter brightness-110" alt="Phone" />
                       </div>
                     </div>
-                    <div class="flex flex-col gap-2">
-                      <h4 class="text-slate-900 font-black text-lg leading-tight uppercase tracking-tight">
-                        Call us :
+                    <div class="flex flex-col gap-2.5">
+                      <h4
+                        class="text-slate-900 font-bold text-lg md:text-xl leading-tight capitalize tracking-tight group-hover:text-emerald-600 transition-colors">
+                        Call Us
                       </h4>
-                      <a href="tel:9611594959"
-                        class="text-slate-800 text-lg font-black tracking-widest hover:text-[#F58220] transition-colors">
-                        9611-59-49-59
+                      <a href="tel:+919831808080"
+                        class="text-slate-800 text-lg md:text-xl font-bold tracking-wide hover:text-[#F58220] transition-colors">
+                        +91 98318 08080
                       </a>
                     </div>
                   </div>
@@ -1812,18 +1711,22 @@
                 </div>
 
                 <!-- Central CTA Button -->
-                <button
-                  class="group flex items-center gap-6 bg-[#04213d] hover:bg-[#062c52] border border-white/5 py-4 pl-10 pr-4 rounded-full transition-all shadow-2xl active:scale-95 hover:-translate-y-1">
-                  <span class="text-white font-black text-xl tracking-tight uppercase">Enquire Now</span>
-                  <div
-                    class="bg-white rounded-full w-12 h-12 flex items-center justify-center text-[#04213d] transition-transform duration-300 group-hover:translate-x-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </div>
-                </button>
+                <div class="flex justify-center">
+                  <button onclick="openModal()"
+                    class="group flex items-center gap-4 bg-[#F58220] hover:bg-[#ff8c2b] text-white px-8 py-4 rounded-full transition-all shadow-[0_10px_30px_rgba(245,130,32,0.3)] hover:shadow-[0_15px_40px_rgba(245,130,32,0.5)] active:scale-95 hover:-translate-y-1">
+                    <span
+                      class="text-white font-bold text-lg md:text-xl leading-tight capitalize tracking-tight">Enquire
+                      Now</span>
+                    <div
+                      class="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white/30">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -1839,8 +1742,10 @@
           <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <!-- Copyright Section -->
             <p class="text-slate-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
-              copyright2026@<span class="text-slate-300">www.moople.in</span>
+              Copyright <span id="year"></span> @
+              <span class="text-slate-300">www.moople.in</span>
             </p>
+            
 
             <!-- Links Section -->
             <div class="flex items-center gap-8">
@@ -1879,6 +1784,8 @@
         header.style.top = marquee.offsetHeight + 'px';
       }
     }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
 
     // Initial call to set correct position
     handleScroll();
@@ -1968,9 +1875,9 @@
                 class="w-full px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F58220]/50 transition-all text-slate-900 appearance-none cursor-pointer"
                 required>
                 <option value="" disabled selected>Select Brand</option>
-                <option value="vtu_main">VTU Main Campus</option>
-                <option value="vtu_digital">VTU Digital Center</option>
-                <option value="partner_brand">Institutional Partner</option>
+                <option value="brand_name">Brand Name</option>
+                <option value="brand_name">Brand Name</option>
+                <option value="brand_name">Brand Name</option>
               </select>
               <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

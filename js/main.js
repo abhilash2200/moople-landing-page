@@ -149,63 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Video Player Logic
-  const videoCards = document.querySelectorAll('.video-card');
-  videoCards.forEach(card => {
-    const video = card.querySelector('video');
-    const playBtn = card.querySelector('.play-btn');
-    const overlay = card.querySelector('.video-overlay'); // click to pause area
-    const progressBar = card.querySelector('.progress-bar-fill');
-    const timeDisplay = card.querySelector('.time-display');
-    const playIcon = card.querySelector('.play-icon'); // small icon in controls
-
-    // Ensure playIcon exists
-    const playControlBtn = playIcon ? playIcon.parentElement : null;
-
-    let isPlaying = false;
-
-    const togglePlay = () => {
-      if (video.paused) {
-        video.play();
-        isPlaying = true;
-        playBtn.style.display = 'none';
-        if (overlay) overlay.style.display = 'block';
-        if (playIcon) playIcon.innerHTML = `<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />`;
-      } else {
-        video.pause();
-        isPlaying = false;
-        playBtn.style.display = 'flex';
-        if (overlay) overlay.style.display = 'none';
-        if (playIcon) playIcon.innerHTML = `<path d="M8 5v14l11-7z" />`;
-      }
-    };
-
-    if (playBtn) playBtn.addEventListener('click', togglePlay);
-    if (overlay) overlay.addEventListener('click', togglePlay);
-    if (playControlBtn) playControlBtn.addEventListener('click', togglePlay);
-
-    if (video) {
-      video.addEventListener('timeupdate', () => {
-        if (video.duration) {
-          const percent = (video.currentTime / video.duration) * 100;
-          if (progressBar) progressBar.style.width = `${percent}%`;
-
-          const currentMinutes = Math.floor(video.currentTime / 60);
-          const currentSeconds = Math.floor(video.currentTime % 60);
-          const durationStr = video.getAttribute('data-duration') || '0:00';
-          if (timeDisplay) timeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds} / ${durationStr}`;
-        }
-      });
-
-      video.addEventListener('ended', () => {
-        isPlaying = false;
-        playBtn.style.display = 'flex';
-        if (overlay) overlay.style.display = 'none';
-        if (progressBar) progressBar.style.width = '0%';
-        if (playIcon) playIcon.innerHTML = `<path d="M8 5v14l11-7z" />`;
-      });
-    }
-  });
 
   // Enquire Buttons Scroll
   const enquireBtns = document.querySelectorAll('button');
