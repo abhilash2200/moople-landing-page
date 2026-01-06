@@ -69,13 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = firstItem.querySelector('.accordion-title');
 
     content.classList.remove('max-h-0', 'opacity-0', 'pointer-events-none');
-    content.classList.add('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6');
-    firstItem.classList.add('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20', 'bg-zinc-900/80');
-    firstItem.classList.remove('border-white/5');
+    content.classList.add('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
+    firstItem.classList.add('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20');
+    firstItem.classList.remove('border-slate-200');
     icon.classList.add('bg-[#F58220]', 'text-white', 'border-transparent', 'rotate-180');
-    icon.classList.remove('border-white/20', 'text-white/40');
+    icon.classList.remove('border-slate-200', 'text-slate-400');
     title.classList.add('text-[#F58220]');
-    title.classList.remove('text-white');
+    title.classList.remove('text-slate-900');
   }
 
   accordionItems.forEach((item) => {
@@ -94,31 +94,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const otherTitle = otherItem.querySelector('.accordion-title');
 
         otherContent.classList.add('max-h-0', 'opacity-0', 'pointer-events-none');
-        otherContent.classList.remove('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6');
+        otherContent.classList.remove('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
 
-        otherItem.classList.remove('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20', 'bg-zinc-900/80');
-        otherItem.classList.add('border-white/5');
+        otherItem.classList.remove('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20');
+        otherItem.classList.add('border-slate-200');
 
         otherIcon.classList.remove('bg-[#F58220]', 'text-white', 'border-transparent', 'rotate-180');
-        otherIcon.classList.add('border-white/20', 'text-white/40');
+        otherIcon.classList.add('border-slate-200', 'text-slate-400');
 
         otherTitle.classList.remove('text-[#F58220]');
-        otherTitle.classList.add('text-white');
+        otherTitle.classList.add('text-slate-900');
       });
 
       // Open clicked if it was closed
       if (!isOpen) {
         content.classList.remove('max-h-0', 'opacity-0', 'pointer-events-none');
-        content.classList.add('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6');
+        content.classList.add('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
 
-        item.classList.add('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20', 'bg-zinc-900/80');
-        item.classList.remove('border-white/5');
+        item.classList.add('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20');
+        item.classList.remove('border-slate-200');
 
         icon.classList.add('bg-[#F58220]', 'text-white', 'border-transparent', 'rotate-180');
-        icon.classList.remove('border-white/20', 'text-white/40');
+        icon.classList.remove('border-slate-200', 'text-slate-400');
 
         title.classList.add('text-[#F58220]');
-        title.classList.remove('text-white');
+        title.classList.remove('text-slate-900');
       }
     });
   });
