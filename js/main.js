@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      header.classList.remove('py-6', 'bg-transparent', 'border-transparent');
+      header.classList.remove('py-3', 'bg-black/10', 'border-transparent');
       header.classList.add('py-3', 'bg-[#020617]/80', 'backdrop-blur-xl', 'border-slate-800/50', 'shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]');
       if (headerTitle) {
         headerTitle.classList.remove('text-lg');
         headerTitle.classList.add('text-base');
       }
     } else {
-      header.classList.add('py-6', 'bg-transparent', 'border-transparent');
+      header.classList.add('py-3', 'bg-black/10', 'border-transparent');
       header.classList.remove('py-3', 'bg-[#020617]/80', 'backdrop-blur-xl', 'border-slate-800/50', 'shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]');
       if (headerTitle) {
         headerTitle.classList.remove('text-base');
