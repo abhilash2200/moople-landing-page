@@ -92,7 +92,7 @@
 
     <!-- Header -->
     <header id="main-header"
-      class="fixed top-[48px] left-0 right-0 z-[100] transition-all duration-500 border-b !py-3 bg-black/10 border-transparent">
+      class="fixed top-[48px] left-0 right-0 z-[100] transition-all duration-500 border-b !py-3 bg-transparent border-transparent">
       <div class="max-w-[1440px] mx-auto px-4 md:px-12 lg:px-24 flex justify-between items-center">
         <!-- Logo & University Info -->
         <div class="flex items-center gap-4 group cursor-pointer">
@@ -138,7 +138,7 @@
     </header>
 
     <!-- SECTION 1 & 2: Navy Background (Hero, Form) -->
-    <div class="relative bg-[#FFF8F0] overflow-hidden">
+    <div class="relative bg-[#FFF8F0]">
       <!-- Navy Section Perspective Grid -->
       <div class="absolute inset-0 z-0 pointer-events-none perspective-grid opacity-30"></div>
 
@@ -156,11 +156,11 @@
                 <h2 class="text-3xl md:text-4xl lg:text-6xl leading-[1.1] mb-4">
                   <span class="text-[#F58220] font-bold capitalize tracking-tight">Get a BSc Degree in</span>
                   <br />
-                  <span class="text-[#020617] text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight">Animation &
+                  <span class="text-[#020617] text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight">Animation
                     Film Making</span>
                 </h2>
 
-                <div class="mb-10 inline-block">
+                <div class="mb-8 inline-block">
                   <div class="bg-[#F58220]/20 border border-[#F58220]/30 rounded-full px-8 py-3 backdrop-blur-md">
                     <p class="text-[#F58220] font-medium text-[12px] md:text-[15px] tracking-wide">
                       Hands-on learning with tools used by professionals
@@ -168,79 +168,11 @@
                   </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mb-10">
-                  <div class="flex items-center gap-6 group cursor-default">
-                    <div class="flex-shrink-0">
-                      <div class="relative flex items-center justify-center">
-                        <div
-                          class="absolute inset-0 bg-blue-500 opacity-20 blur-2xl rounded-full group-hover:opacity-60 transition-opacity">
-                        </div>
-                        <div
-                          class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-xl backdrop-blur-sm transition-all group-hover:-translate-y-1">
-                          <img src="https://cdn-icons-png.flaticon.com/512/10003/10003759.png"
-                            class="w-6 h-6 filter brightness-110" alt="Faculty" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="text-slate-800 font-normal text-md leading-tight transition-colors group-hover:text-[#F58220]">
-                      Industry Expert Faculty
-                    </p>
-                  </div>
-                  <div class="flex items-center gap-6 group cursor-default">
-                    <div class="flex-shrink-0">
-                      <div class="relative flex items-center justify-center">
-                        <div
-                          class="absolute inset-0 bg-orange-500 opacity-20 blur-2xl rounded-full group-hover:opacity-60 transition-opacity">
-                        </div>
-                        <div
-                          class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-xl backdrop-blur-sm transition-all group-hover:-translate-y-1">
-                          <img src="https://cdn-icons-png.flaticon.com/512/2103/2103533.png"
-                            class="w-6 h-6 filter brightness-110" alt="Curriculum" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="text-slate-600 font-normal text-md leading-tight transition-colors group-hover:text-[#F58220]">
-                      AI-Integrated Curriculum
-                    </p>
-                  </div>
-                  <div class="flex items-center gap-6 group cursor-default">
-                    <div class="flex-shrink-0">
-                      <div class="relative flex items-center justify-center">
-                        <div
-                          class="absolute inset-0 bg-indigo-500 opacity-20 blur-2xl rounded-full group-hover:opacity-60 transition-opacity">
-                        </div>
-                        <div
-                          class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-xl backdrop-blur-sm transition-all group-hover:-translate-y-1">
-                          <img src="https://cdn-icons-png.flaticon.com/512/3233/3233508.png"
-                            class="w-6 h-6 filter brightness-110" alt="Infrastructure" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="text-slate-600 font-normal text-md leading-tight transition-colors group-hover:text-[#F58220]">
-                      Advanced Infrastructure
-                    </p>
-                  </div>
-                  <div class="flex items-center gap-6 group cursor-default">
-                    <div class="flex-shrink-0">
-                      <div class="relative flex items-center justify-center">
-                        <div
-                          class="absolute inset-0 bg-emerald-500 opacity-20 blur-2xl rounded-full group-hover:opacity-60 transition-opacity">
-                        </div>
-                        <div
-                          class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-xl backdrop-blur-sm transition-all group-hover:-translate-y-1">
-                          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
-                            class="w-6 h-6 filter brightness-110" alt="Placement" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="text-slate-600 font-normal text-md leading-tight transition-colors group-hover:text-[#F58220]">
-                      Placement Support
-                    </p>
-                  </div>
+                <div class="mb-10">
+                  <p class="text-slate-600 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
+                    Get a BSc Degree in Animation & Film Making with Moople. Hands-on learning, industry-expert faculty,
+                    and 100% placement support. Enroll today!
+                  </p>
                 </div>
 
                 <button onclick="openModal()"
@@ -396,11 +328,103 @@
             </div>
           </div>
         </section>
-      </div>
 
-      <!-- Transition Gradient to Black -->
-      <!-- <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none">
-      </div> -->
+        <!-- Features Cards Section -->
+        <section class="relative z-10 -mb-10">
+          <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
+              <div class="w-full sm:w-[45%] md:w-[22%] lg:w-[20%]">
+                <div class="bg-white rounded-[10px] p-4 shadow-lg hover:shadow-xl transition-shadow">
+                  <div class="flex items-center gap-4 md:gap-6 group cursor-default">
+                    <div class="flex-shrink-0">
+                      <div class="relative flex items-center justify-center">
+                        <div
+                          class="absolute inset-0 bg-blue-500 opacity-20 blur-2xl rounded-full group-hover:opacity-60 transition-opacity">
+                        </div>
+                        <div
+                          class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-xl backdrop-blur-sm transition-all group-hover:-translate-y-1">
+                          <img src="https://cdn-icons-png.flaticon.com/512/10003/10003759.png"
+                            class="w-6 h-6 filter brightness-110" alt="Faculty" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="text-slate-800 font-normal text-sm md:text-base leading-tight transition-colors group-hover:text-[#F58220]">
+                      Industry Expert Faculty
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full sm:w-[45%] md:w-[22%] lg:w-[20%]">
+                <div class="bg-white rounded-[10px] p-4 shadow-lg hover:shadow-xl transition-shadow">
+                  <div class="flex items-center gap-4 md:gap-6 group cursor-default">
+                    <div class="flex-shrink-0">
+                      <div class="relative flex items-center justify-center">
+                        <div
+                          class="absolute inset-0 bg-orange-500 opacity-20 blur-2xl rounded-full group-hover:opacity-60 transition-opacity">
+                        </div>
+                        <div
+                          class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-xl backdrop-blur-sm transition-all group-hover:-translate-y-1">
+                          <img src="https://cdn-icons-png.flaticon.com/512/2103/2103533.png"
+                            class="w-6 h-6 filter brightness-110" alt="Curriculum" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="text-slate-600 font-normal text-sm md:text-base leading-tight transition-colors group-hover:text-[#F58220]">
+                      AI-Integrated Curriculum
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full sm:w-[45%] md:w-[22%] lg:w-[20%]">
+                <div class="bg-white rounded-[10px] p-4 shadow-lg hover:shadow-xl transition-shadow">
+                  <div class="flex items-center gap-4 md:gap-6 group cursor-default">
+                    <div class="flex-shrink-0">
+                      <div class="relative flex items-center justify-center">
+                        <div
+                          class="absolute inset-0 bg-indigo-500 opacity-20 blur-2xl rounded-full group-hover:opacity-60 transition-opacity">
+                        </div>
+                        <div
+                          class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-xl backdrop-blur-sm transition-all group-hover:-translate-y-1">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3233/3233508.png"
+                            class="w-6 h-6 filter brightness-110" alt="Infrastructure" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="text-slate-600 font-normal text-sm md:text-base leading-tight transition-colors group-hover:text-[#F58220]">
+                      Advanced Infrastructure
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full sm:w-[45%] md:w-[22%] lg:w-[20%]">
+                <div class="bg-white rounded-[10px] p-4 shadow-lg hover:shadow-xl transition-shadow">
+                  <div class="flex items-center gap-4 md:gap-6 group cursor-default">
+                    <div class="flex-shrink-0">
+                      <div class="relative flex items-center justify-center">
+                        <div
+                          class="absolute inset-0 bg-emerald-500 opacity-20 blur-2xl rounded-full group-hover:opacity-60 transition-opacity">
+                        </div>
+                        <div
+                          class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-xl backdrop-blur-sm transition-all group-hover:-translate-y-1">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+                            class="w-6 h-6 filter brightness-110" alt="Placement" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="text-slate-600 font-normal text-sm md:text-base leading-tight transition-colors group-hover:text-[#F58220]">
+                      Placement Support
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <!-- SECTION 3: Pure Black Background -->
@@ -415,9 +439,9 @@
 
       <div class="relative z-10">
         <!-- Why Choose Section -->
-        <section class="py-10 relative">
+        <section class="py-10 pt-20 relative">
           <div class="container px-4 mx-auto">
-            <h2 class="text-4xl md:text-5xl lg:text-[40px] leading-tight font-semibold mb-3 text-center">
+            <h2 class="text-4xl md:text-5xl lg:text-[40px] font-bold mb-3 tracking-tight capitalize text-center">
               Why Choose <span class="text-[#F58220]">Moople</span> Animation & Film
             </h2>
 
@@ -614,10 +638,10 @@
               <div class="opacity-80">
                 <span class="text-slate-900 font-black text-2xl tracking-tighter">MOOPLE</span>
               </div>
-              <h2 class="text-4xl md:text-5xl lg:text-[40px] leading-tight font-semibold mb-3">
+              <h2 class="text-4xl md:text-5xl lg:text-[40px] font-bold mb-3 tracking-tight capitalize">
                 <span class="text-[#F58220]">More Animation</span> <span class="text-[#020617]">Courses</span>
               </h2>
-              <p class="text-slate-400 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
+              <p class="text-slate-600 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
                 At Moople, we offer both degree and certificate courses in Animation. Master the art of animation with
                 us by enrolling in our 2D animation course or 3D animation courses and help shape your career. Start
                 your animation adventure with us and make your creative dreams a reality!
@@ -764,7 +788,7 @@
               <h2 class="text-4xl md:text-5xl lg:text-[40px] font-bold mb-3 tracking-tight capitalize">
                 <span class="text-[#F58220]">B.Sc</span> <span class="text-[#020617]">in Animation Course Details</span>
               </h2>
-              <p class="text-slate-400 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
+              <p class="text-slate-600 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
                 Moople, in collaboration with reputed colleges, offers both Full-Time & Weekend 4 year Degree in
                 Animation.
                 Affiliated to MAKAUT in association with Institute of Management Study and Dr. B.C. Roy Academy of
@@ -1189,7 +1213,7 @@
           <div class="container px-4 mx-auto">
             <!-- Heading -->
             <div class="text-center mb-2">
-              <h2 class="text-3xl md:text-4xl lg:text-[40px] font-bold mb-3 capitalize tracking-tight">
+              <h2 class="text-4xl md:text-5xl lg:text-[40px] font-bold mb-3 tracking-tight capitalize">
                 <span class="text-[#F58220]">Software</span> <span class="text-[#020617]">taught by us</span>
               </h2>
             </div>
@@ -1397,7 +1421,7 @@
                 </h2>
 
                 <p
-                  class="text-slate-400 text-base md:text-lg lg:text-xl font-medium mb-10 leading-relaxed max-w-2xl mx-auto">
+                  class="text-slate-600 text-base md:text-lg lg:text-xl font-medium mb-10 leading-relaxed max-w-2xl mx-auto">
                   Our programs focus on building skills employers look for.
                   <span class="text-slate-900 font-bold"> Trusted by top companies </span> for quality talent.
                   Prepare for your dream career today.
@@ -1435,7 +1459,7 @@
               <h2 class="text-4xl md:text-5xl lg:text-[40px] font-bold mb-3 tracking-tight capitalize">
                 <span class="text-[#020617]">Career</span> <span class="text-[#F58220]">Opportunity</span>
               </h2>
-              <p class="max-w-4xl text-slate-400 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
+              <p class="max-w-4xl text-slate-600 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
                 The completion of our BSc in Animation Course offers students a wide range of career opportunities
                 across various sectors.
                 Here are some prominent industries that require animation skills —
@@ -1454,15 +1478,15 @@
                         class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
                         <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
                           <div class="absolute inset-0 z-0">
-                            <img src="assets/fashion.webp" alt="Healthcare"
-                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <img src="assets/film.webp" alt="Film and Television"
+                              class="w-auto h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
                             </div>
                           </div>
                           <!-- Base Banner -->
                           <div
                             class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                            <span class="text-white font-normal text-sm tracking-wide">Healthcare</span>
+                            <span class="text-white font-normal text-sm tracking-wide">Film and Television</span>
                             <span class="text-white font-bold text-xl mb-0.5">+</span>
                           </div>
                           <!-- Expanded Overlay -->
@@ -1479,25 +1503,31 @@
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Medical Illustrator
+                                  3D Animator
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Digital Health Designer
+                                  Character Animator
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Forensic Animator
+                                  Visual Effects (VFX) Artist
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Clinical Data Viz Artist
+                                  Technical Director
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Animation Director
                                 </li>
                               </ul>
                             </div>
@@ -1514,7 +1544,7 @@
                         class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
                         <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
                           <div class="absolute inset-0 z-0">
-                            <img src="/assets/film.webp" alt="Education"
+                            <img src="/assets/video-games.webp" alt="Video Games"
                               class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
                             </div>
@@ -1522,7 +1552,7 @@
                           <!-- Base Banner -->
                           <div
                             class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                            <span class="text-white font-normal text-sm tracking-wide">Education</span>
+                            <span class="text-white font-normal text-sm tracking-wide">Video Games</span>
                             <span class="text-white font-bold text-xl mb-0.5">+</span>
                           </div>
                           <!-- Expanded Overlay -->
@@ -1530,7 +1560,7 @@
                             class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
                             <div
                               class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                              <span class="text-white font-normal text-sm tracking-tight">Education</span>
+                              <span class="text-white font-normal text-sm tracking-tight">Video Games</span>
                               <span class="text-white font-black text-2xl leading-none mb-1">−</span>
                             </div>
                             <div class="p-7">
@@ -1539,31 +1569,31 @@
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Digital Marketing Manager
+                                  Game Animator
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Content Writer
+                                  Character Animator
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  SEO Specialist
+                                  Environment Artist
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  PPC Specialist
+                                  3D Modeler
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Social Media Manager
+                                  Animation Designer
                                 </li>
                               </ul>
                             </div>
@@ -1580,7 +1610,7 @@
                         class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
                         <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
                           <div class="absolute inset-0 z-0">
-                            <img src="assets/ads-graphics.webp" alt="Real Estate"
+                            <img src="assets/realestate.webp" alt="Architecture and Real Estate"
                               class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
                             </div>
@@ -1588,7 +1618,8 @@
                           <!-- Base Banner -->
                           <div
                             class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                            <span class="text-white font-normal text-sm tracking-wide">Real Estate</span>
+                            <span class="text-white font-normal text-sm tracking-wide">Architecture and Real
+                              Estate</span>
                             <span class="text-white font-bold text-xl mb-0.5">+</span>
                           </div>
                           <!-- Expanded Overlay -->
@@ -1596,7 +1627,8 @@
                             class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
                             <div
                               class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                              <span class="text-white font-normal text-sm tracking-tight">Real Estate</span>
+                              <span class="text-white font-normal text-sm tracking-tight">Architecture and Real
+                                Estate</span>
                               <span class="text-white font-black text-2xl leading-none mb-1">−</span>
                             </div>
                             <div class="p-7">
@@ -1605,25 +1637,19 @@
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  ArchViz Specialist
+                                  Architectural Visualizer
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Virtual Tour Developer
+                                  3D Modeler
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>3D
-                                  Interior Modeller
-                                </li>
-                                <li
-                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
-                                  </div>
-                                  Property Marketer
+                                  Visualization Artist
                                 </li>
                               </ul>
                             </div>
@@ -1640,7 +1666,7 @@
                         class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
                         <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
                           <div class="absolute inset-0 z-0">
-                            <img src="assets/automotive-vfx.webp" alt="Finance"
+                            <img src="assets/product.webp" alt="Finance"
                               class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
                             </div>
@@ -1648,7 +1674,8 @@
                           <!-- Base Banner -->
                           <div
                             class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                            <span class="text-white font-normal text-sm tracking-wide">Finance</span>
+                            <span class="text-white font-normal text-sm tracking-wide">Product Design and
+                              Manufacturing</span>
                             <span class="text-white font-bold text-xl mb-0.5">+</span>
                           </div>
                           <!-- Expanded Overlay -->
@@ -1656,7 +1683,8 @@
                             class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
                             <div
                               class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                              <span class="text-white font-normal text-sm tracking-tight">Finance</span>
+                              <span class="text-white font-normal text-sm tracking-tight">Product Design and
+                                Manufacturing</span>
                               <span class="text-white font-black text-2xl leading-none mb-1">−</span>
                             </div>
                             <div class="p-7">
@@ -1665,25 +1693,19 @@
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Data Visualizer
+                                  3D Product Animator
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  FinTech UI Designer
+                                  Industrial Designer
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Corporate Motion Artist
-                                </li>
-                                <li
-                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
-                                  </div>
-                                  Strategic Graphics
+                                  Visualization Specialist
                                 </li>
                               </ul>
                             </div>
@@ -1700,7 +1722,7 @@
                         class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
                         <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
                           <div class="absolute inset-0 z-0">
-                            <img src="assets/ar-vr-vfx.webp" alt="Entertainment"
+                            <img src="assets/healthcare.webp" alt="Entertainment"
                               class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
                             </div>
@@ -1708,7 +1730,7 @@
                           <!-- Base Banner -->
                           <div
                             class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                            <span class="text-white font-normal text-sm tracking-wide">Entertainment</span>
+                            <span class="text-white font-normal text-sm tracking-wide">Healthcare and Medical</span>
                             <span class="text-white font-bold text-xl mb-0.5">+</span>
                           </div>
                           <!-- Expanded Overlay -->
@@ -1716,7 +1738,7 @@
                             class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
                             <div
                               class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                              <span class="text-white font-normal text-sm tracking-tight">Entertainment</span>
+                              <span class="text-white font-normal text-sm tracking-tight">Healthcare and Medical</span>
                               <span class="text-white font-black text-2xl leading-none mb-1">−</span>
                             </div>
                             <div class="p-7">
@@ -1725,25 +1747,473 @@
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  VFX Lead Artist
+                                  Medical Animator
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Character Animator
+                                  Biomedical Visualizer
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Matte Painter
+                                  3D Modeler
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item 6 Engineering -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/engineering.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Engineering and
+                              Manufacturing</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Engineering and
+                                Manufacturing</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Industrial Animator
                                 </li>
                                 <li
                                   class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
                                   <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
                                   </div>
-                                  Concept Artist
+                                  Engineering Visualizer
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Manufacturing Process Animator
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item 7 Engineering -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/advertising-industry.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Marketing and Advertising</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Marketing and
+                                Advertising</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  3D Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Visual Content Creator
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item 8 Engineering -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/e-learning.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Education and E-learning</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Education and
+                                E-learning</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  E-Learning Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Educational Content Creator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Multimedia Developer
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item 9 Engineering -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/automotive.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Automotive</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Automotive</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Mechanical Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Automotive Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Vehicle Dynamics Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  3D Vehicle Modeler and Animator
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item 10 Engineering -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/fashion.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Fashion</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Fashion</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  3D Fashion Designer
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Virtual Fashion Show Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Textile Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Virtual Stylist
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item 11 Engineering -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/science-research.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Science and Research</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Science and Research</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Scientific Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Astrophysics Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Chemical Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Forensic Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Geoscience Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Scientific Visualization Specialist
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item 12 Engineering -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/qr-vr.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Virtual Reality (VR) and
+                              Augmented Reality (AR)</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Virtual Reality (VR) and
+                                Augmented Reality (AR)</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  VR/AR Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  3D Artist
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Immersive Media Specialist
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item 13 Engineering -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/simulation-training.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Simulation and Training</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Simulation and Training</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Simulation Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Training Content Developer
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  3D Simulation Specialist
                                 </li>
                               </ul>
                             </div>
@@ -1782,7 +2252,7 @@
               <h2 class="text-4xl md:text-5xl lg:text-[40px] font-bold mb-3 tracking-tight capitalize">
                 <span class="text-[#020617]">Students</span> <span class="text-[#F58220]">Speak</span>
               </h2>
-              <p class="max-w-4xl text-slate-400 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
+              <p class="max-w-4xl text-slate-600 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
                 Showcasing students' real-life experiences and success stories. They offer authentic perspectives on how
                 our programs have impacted their lives and careers.
               </p>
