@@ -69,24 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Generic Carousel Logic
-  const initCarousel = (containerId, prevId, nextId, scrollAmountFunc) => {
-    const container = document.getElementById(containerId);
-    const prevBtn = document.getElementById(prevId);
-    const nextBtn = document.getElementById(nextId);
-
-    if (container && prevBtn && nextBtn) {
-      const scroll = (direction) => {
-        const scrollAmount = scrollAmountFunc ? scrollAmountFunc(container) : container.clientWidth / 2;
-        const scrollTo = direction === 'left' ? container.scrollLeft - scrollAmount : container.scrollLeft + scrollAmount;
-        container.scrollTo({ left: scrollTo, behavior: 'smooth' });
-      };
-
-      prevBtn.addEventListener('click', () => scroll('left'));
-      nextBtn.addEventListener('click', () => scroll('right'));
-    }
-  };
-
   // Software Carousel (Splide)
   if (document.querySelector('#software-splide')) {
     const softwareSplide = new Splide('#software-splide', {
@@ -133,10 +115,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (carNext) carNext.addEventListener('click', () => careerSplide.go('>'));
   }
 
-  // Students Speak Carousel
-  initCarousel('stories-list', 'stories-prev', 'stories-next', (c) => {
-    return window.innerWidth < 768 ? c.clientWidth : c.clientWidth / 2;
-  });
+  // Students Speak Carousel (Splide)
+  if (document.querySelector('#stories-splide')) {
+    const storiesSplide = new Splide('#stories-splide', {
+      type: 'loop',
+      autoWidth: true,
+      focus: 'center',
+      gap: '1.5rem',
+      pagination: false,
+      arrows: false,
+    });
+    storiesSplide.mount();
+
+    const stPrev = document.getElementById('stories-prev');
+    const stNext = document.getElementById('stories-next');
+    if (stPrev) stPrev.addEventListener('click', () => storiesSplide.go('<'));
+    if (stNext) stNext.addEventListener('click', () => storiesSplide.go('>'));
+  }
 
   // Course Details Accordion
   const accordionItems = document.querySelectorAll('.semester-item');

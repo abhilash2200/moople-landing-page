@@ -154,7 +154,7 @@
             <div class="w-full md:w-1/2">
               <div class="">
                 <h2 class="text-3xl md:text-4xl lg:text-6xl leading-[1.1] mb-4">
-                  <span class="text-[#F58220] font-bold capitalize tracking-wide">Get a BSc Degree in</span>
+                  <span class="text-[#F58220] font-bold capitalize tracking-tight">Get a BSc Degree in</span>
                   <br />
                   <span class="text-[#020617] text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight">Animation &
                     Film Making</span>
@@ -1778,7 +1778,7 @@
         <!-- Students Speak Section -->
         <section class="py-10 relative overflow-hidden">
           <div class="container px-4 mx-auto">
-            <div class="mb-6">
+            <div class="mb-2">
               <h2 class="text-4xl md:text-5xl lg:text-[40px] font-bold mb-3 tracking-tight capitalize">
                 <span class="text-[#020617]">Students</span> <span class="text-[#F58220]">Speak</span>
               </h2>
@@ -1788,57 +1788,64 @@
               </p>
             </div>
 
-            <div class="relative">
-              <div id="stories-list" class="flex gap-6 overflow-x-auto scrollbar-hide pb-6 px-1 snap-x snap-mandatory"
-                style="-ms-overflow-style: none; scrollbar-width: none;">
-                <!-- Video Cards Loop -->
-                <!-- Video 1 -->
-                <div class="flex-shrink-0 w-[320px] md:w-[360px] snap-center">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative aspect-[16/9] bg-black">
-                      <video src="assets/Debraj-testimonials.mp4" poster="assets/debraj-thumbnail.webp"
-                        class="w-full h-full object-cover" playsinline controls></video>
+            <!-- Stories Splide -->
+            <div id="stories-splide" class="splide relative" aria-label="Student Stories">
+              <div class="splide__track py-8">
+                <ul class="splide__list">
+                  <!-- Video 1 -->
+                  <li class="splide__slide">
+                    <div class="w-[320px] md:w-[360px] snap-center">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative aspect-[16/9] bg-black">
+                          <video src="assets/Debraj-testimonials.mp4" poster="assets/debraj-thumbnail.webp"
+                            class="w-full h-full object-cover" playsinline controls></video>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-
-                <!-- Video 2 -->
-                <div class="flex-shrink-0 w-[320px] md:w-[360px] snap-center">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative aspect-[16/9] bg-black">
-                      <video src="assets/Ranjita-testimonials.mp4" poster="assets/ranjita-thumbnail.webp"
-                        class="w-full h-full object-cover" playsinline controls></video>
+                  </li>
+                  <!-- Video 2 -->
+                  <li class="splide__slide">
+                    <div class="w-[320px] md:w-[360px] snap-center">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative aspect-[16/9] bg-black">
+                          <video src="assets/Ranjita-testimonials.mp4" poster="assets/ranjita-thumbnail.webp"
+                            class="w-full h-full object-cover" playsinline controls></video>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-
-                <!-- Video 3 -->
-                <div class="flex-shrink-0 w-[320px] md:w-[360px] snap-center">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative aspect-[16/9] bg-black">
-                      <video src="assets/Safan-testimonials.mp4" poster="assets/safan-thumbnail.webp"
-                        class="w-full h-full object-cover" playsinline controls></video>
+                  </li>
+                  <!-- Video 3 -->
+                  <li class="splide__slide">
+                    <div class="w-[320px] md:w-[360px] snap-center">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative aspect-[16/9] bg-black">
+                          <video src="assets/Safan-testimonials.mp4" poster="assets/safan-thumbnail.webp"
+                            class="w-full h-full object-cover" playsinline controls></video>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <!-- Video 4 -->
-                <div class="flex-shrink-0 w-[320px] md:w-[360px] snap-center">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative aspect-[16/9] bg-black">
-                      <video src="assets/Snehasish-testimonials.mp4" poster="assets/snehasish-thumbnail.webp"
-                        class="w-full h-full object-cover" playsinline controls></video>
+                  </li>
+                  <!-- Video 4 -->
+                  <li class="splide__slide">
+                    <div class="w-[320px] md:w-[360px] snap-center">
+                      <div
+                        class="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="relative aspect-[16/9] bg-black">
+                          <video src="assets/Snehasish-testimonials.mp4" poster="assets/snehasish-thumbnail.webp"
+                            class="w-full h-full object-cover" playsinline controls></video>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </div>
             </div>
 
             <!-- Navigation -->
-            <div class="flex justify-center items-center gap-5 mt-10">
+            <div class="flex justify-center items-center gap-5 mt-6">
               <button id="stories-prev"
                 class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 transition-all hover:bg-[#F58220] hover:text-white hover:border-transparent active:scale-90 shadow-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
