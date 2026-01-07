@@ -135,64 +135,170 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Course Details Accordion
   const accordionItems = document.querySelectorAll('.semester-item');
-  // Open first one by default
-  if (accordionItems.length > 0) {
-    const firstItem = accordionItems[0];
-    const content = firstItem.querySelector('.accordion-content');
-    const icon = firstItem.querySelector('.accordion-icon');
-    const title = firstItem.querySelector('.accordion-title');
-
-    content.classList.remove('max-h-0', 'opacity-0', 'pointer-events-none');
-    content.classList.add('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
-    firstItem.classList.add('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20');
-    firstItem.classList.remove('border-slate-200');
-    icon.classList.add('bg-[#F58220]', 'text-white', 'border-transparent', 'rotate-180');
-    icon.classList.remove('border-slate-200', 'text-slate-400');
-    title.classList.add('text-[#F58220]');
-    title.classList.remove('text-slate-900');
-  }
-
-  accordionItems.forEach((item) => {
+  const setAccordionState = (item, isOpen, skipTransition = false) => {
     const btn = item.querySelector('.accordion-btn');
     const content = item.querySelector('.accordion-content');
     const icon = item.querySelector('.accordion-icon');
     const title = item.querySelector('.accordion-title');
 
-    btn.addEventListener('click', () => {
-      const isOpen = !content.classList.contains('max-h-0');
+    if (!btn || !content) return;
 
-      // Close all
-      accordionItems.forEach(otherItem => {
-        const otherContent = otherItem.querySelector('.accordion-content');
-        const otherIcon = otherItem.querySelector('.accordion-icon');
-        const otherTitle = otherItem.querySelector('.accordion-title');
+    btn.setAttribute('aria-expanded', isOpen);
 
-        otherContent.classList.add('max-h-0', 'opacity-0', 'pointer-events-none');
-        otherContent.classList.remove('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
+    if (isOpen) {
+      content.classList.remove('pointer-events-none');
 
-        otherItem.classList.remove('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20');
-        otherItem.classList.add('border-slate-200');
+      if (skipTransition) {
+        const hadMaxH0 = content.classList.contains('max-h-0');
+        if (hadMaxH0) {
+          content.classList.remove('max-h-0');
+          content.style.maxHeight = 'none';
+        }
+        const targetHeight = content.scrollHeight;
+        content.style.maxHeight = targetHeight + 'px';
+        content.classList.remove('opacity-0');
+        content.classList.add('opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
+      } else {
+        const hadMaxH0 = content.classList.contains('max-h-0');
+        let targetHeight;
 
-        otherIcon.classList.remove('bg-[#F58220]', 'text-white', 'border-transparent', 'rotate-180');
-        otherIcon.classList.add('border-slate-200', 'text-slate-400');
+        if (hadMaxH0) {
+          content.classList.remove('max-h-0');
+          const currentMaxHeight = content.style.maxHeight;
+          content.style.maxHeight = 'none';
+          targetHeight = content.scrollHeight;
+          content.style.maxHeight = '0px';
+          void content.offsetHeight;
+        } else {
+          targetHeight = content.scrollHeight;
+          content.style.maxHeight = '0px';
+          void content.offsetHeight;
+        }
 
-        otherTitle.classList.remove('text-[#F58220]');
-        otherTitle.classList.add('text-slate-900');
-      });
+        requestAnimationFrame(() => {
+          content.style.maxHeight = targetHeight + 'px';
+          content.classList.remove('opacity-0');
+          content.classList.add('opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
+        });
+      }
 
-      // Open clicked if it was closed
-      if (!isOpen) {
-        content.classList.remove('max-h-0', 'opacity-0', 'pointer-events-none');
-        content.classList.add('max-h-[400px]', 'opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
+      item.classList.add('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20');
+      item.classList.remove('border-slate-200');
 
-        item.classList.add('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20');
-        item.classList.remove('border-slate-200');
-
+      if (icon) {
         icon.classList.add('bg-[#F58220]', 'text-white', 'border-transparent', 'rotate-180');
         icon.classList.remove('border-slate-200', 'text-slate-400');
-
+      }
+      if (title) {
         title.classList.add('text-[#F58220]');
         title.classList.remove('text-slate-900');
+      }
+    } else {
+        const currentHeight = content.scrollHeight;
+      content.style.maxHeight = currentHeight + 'px';
+
+      void content.offsetHeight;
+
+      requestAnimationFrame(() => {
+        content.style.maxHeight = '0px';
+        setTimeout(() => {
+          content.classList.add('opacity-0', 'pointer-events-none');
+          setTimeout(() => {
+            if (btn.getAttribute('aria-expanded') === 'false') {
+              content.classList.add('max-h-0');
+            }
+          }, 500);
+        }, 50);
+        content.classList.remove('opacity-100', 'pb-6', 'px-6', 'bg-slate-50');
+      });
+
+      item.classList.remove('border-[#F58220]/60', 'ring-1', 'ring-[#F58220]/20');
+      item.classList.add('border-slate-200');
+
+      if (icon) {
+        icon.classList.remove('bg-[#F58220]', 'text-white', 'border-transparent', 'rotate-180');
+        icon.classList.add('border-slate-200', 'text-slate-400');
+      }
+      if (title) {
+        title.classList.remove('text-[#F58220]');
+        title.classList.add('text-slate-900');
+      }
+    }
+  };
+
+  const handleResize = () => {
+    accordionItems.forEach(item => {
+      const btn = item.querySelector('.accordion-btn');
+      const content = item.querySelector('.accordion-content');
+      if (btn && btn.getAttribute('aria-expanded') === 'true') {
+        const currentMaxHeight = content.style.maxHeight;
+        content.style.maxHeight = 'none';
+        const newHeight = content.scrollHeight;
+        content.style.maxHeight = currentMaxHeight;
+        requestAnimationFrame(() => {
+          content.style.maxHeight = newHeight + 'px';
+        });
+      }
+    });
+  };
+  window.addEventListener('resize', handleResize);
+
+  const handleAccordionToggle = (item, e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    const btn = item.querySelector('.accordion-btn');
+    if (!btn) return;
+
+    const isCurrentlyOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    accordionItems.forEach(otherItem => {
+      const otherBtn = otherItem.querySelector('.accordion-btn');
+      if (otherBtn && otherBtn.getAttribute('aria-expanded') === 'true') {
+        setAccordionState(otherItem, false);
+      }
+    });
+
+    if (!isCurrentlyOpen) {
+      setTimeout(() => {
+        setAccordionState(item, true);
+      }, 10);
+    }
+  };
+
+  // Initialization Loop & Event Listeners
+  accordionItems.forEach((item, index) => {
+    const btn = item.querySelector('.accordion-btn');
+    const content = item.querySelector('.accordion-content');
+
+    if (!btn || !content) return;
+
+    // A11y: Setup ARIA attributes
+    const contentId = content.id || `accordion-content-${index}`;
+    content.id = contentId;
+    btn.setAttribute('aria-controls', contentId);
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('type', 'button'); // FIX: Ensure button type to prevent form submission
+
+    // Initial State: Open first one without transition
+    const shouldBeOpen = index === 0;
+    if (shouldBeOpen) {
+      setAccordionState(item, true, true); // Skip transition on initial load
+    }
+
+    // FIX: Click handler with scroll prevention
+    btn.addEventListener('click', (e) => {
+      handleAccordionToggle(item, e);
+    });
+
+    // FIX: Keyboard support (Enter and Space) for accessibility
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        handleAccordionToggle(item, e);
       }
     });
   });
