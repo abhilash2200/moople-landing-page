@@ -1431,7 +1431,7 @@
         <section class="py-10 relative bg-[#FFF8F0]">
           <div class="container px-4 mx-auto">
             <!-- Header Section -->
-            <div class="mb-6">
+            <div class="mb-2">
               <h2 class="text-4xl md:text-5xl lg:text-[40px] font-bold mb-3 tracking-tight capitalize">
                 <span class="text-[#020617]">Career</span> <span class="text-[#F58220]">Opportunity</span>
               </h2>
@@ -1443,283 +1443,316 @@
             </div>
 
             <!-- Carousel Content -->
-            <div class="relative">
-              <div id="career-list" class="flex gap-8 overflow-x-auto scrollbar-hide pb-4 px-1 snap-x snap-mandatory"
-                style="-ms-overflow-style: none; scrollbar-width: none;">
-                <!-- Item 1 Healthcare -->
-                <div class="flex-shrink-0 w-[300px] md:w-[350px] group relative snap-center py-4 career-card">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
-                    <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
-                      <div class="absolute inset-0 z-0">
-                        <img src="assets/fashion.webp" alt="Healthcare"
-                          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
-                        </div>
-                      </div>
-                      <!-- Base Banner -->
+            <!-- Career Splide -->
+            <div id="career-splide" class="splide relative" aria-label="Career Opportunities">
+              <div class="splide__track py-8">
+                <ul class="splide__list">
+                  <!-- Item 1 Healthcare -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
                       <div
-                        class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                        <span class="text-white font-normal text-sm tracking-wide">Healthcare</span>
-                        <span class="text-white font-bold text-xl mb-0.5">+</span>
-                      </div>
-                      <!-- Expanded Overlay -->
-                      <div
-                        class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
-                        <div
-                          class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                          <span class="text-white font-normal text-sm tracking-tight">Healthcare</span>
-                          <span class="text-white font-black text-2xl leading-none mb-1">−</span>
-                        </div>
-                        <div class="p-7">
-                          <ul class="space-y-4">
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Medical Illustrator
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Digital Health Designer
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Forensic Animator
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Clinical Data Viz Artist
-                            </li>
-                          </ul>
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/fashion.webp" alt="Healthcare"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Healthcare</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Healthcare</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Medical Illustrator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Digital Health Designer
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Forensic Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Clinical Data Viz Artist
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
 
-                <!-- Item 2 Education -->
-                <div class="flex-shrink-0 w-[300px] md:w-[350px] group relative snap-center py-4 career-card">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
-                    <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
-                      <div class="absolute inset-0 z-0">
-                        <img src="/assets/film.webp" alt="Education"
-                          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
-                        </div>
-                      </div>
-                      <!-- Base Banner -->
+                  <!-- Item 2 Education -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
                       <div
-                        class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                        <span class="text-white font-normal text-sm tracking-wide">Education</span>
-                        <span class="text-white font-bold text-xl mb-0.5">+</span>
-                      </div>
-                      <!-- Expanded Overlay -->
-                      <div
-                        class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
-                        <div
-                          class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                          <span class="text-white font-normal text-sm tracking-tight">Education</span>
-                          <span class="text-white font-black text-2xl leading-none mb-1">−</span>
-                        </div>
-                        <div class="p-7">
-                          <ul class="space-y-4">
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Digital Marketing Manager
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Content Writer
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              SEO Specialist
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              PPC Specialist
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Social Media Manager
-                            </li>
-                          </ul>
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="/assets/film.webp" alt="Education"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Education</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Education</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Digital Marketing Manager
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Content Writer
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  SEO Specialist
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  PPC Specialist
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Social Media Manager
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
 
-                <!-- Item 3 Real Estate -->
-                <div class="flex-shrink-0 w-[300px] md:w-[350px] group relative snap-center py-4 career-card">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
-                    <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
-                      <div class="absolute inset-0 z-0">
-                        <img src="assets/ads-graphics.webp" alt="Real Estate"
-                          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
-                        </div>
-                      </div>
-                      <!-- Base Banner -->
+                  <!-- Item 3 Real Estate -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
                       <div
-                        class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                        <span class="text-white font-normal text-sm tracking-wide">Real Estate</span>
-                        <span class="text-white font-bold text-xl mb-0.5">+</span>
-                      </div>
-                      <!-- Expanded Overlay -->
-                      <div
-                        class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
-                        <div
-                          class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                          <span class="text-white font-normal text-sm tracking-tight">Real Estate</span>
-                          <span class="text-white font-black text-2xl leading-none mb-1">−</span>
-                        </div>
-                        <div class="p-7">
-                          <ul class="space-y-4">
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              ArchViz Specialist
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Virtual Tour Developer
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>3D
-                              Interior Modeller
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Property Marketer
-                            </li>
-                          </ul>
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/ads-graphics.webp" alt="Real Estate"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Real Estate</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Real Estate</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  ArchViz Specialist
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Virtual Tour Developer
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>3D
+                                  Interior Modeller
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Property Marketer
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
 
-                <!-- Item 4 Finance -->
-                <div class="flex-shrink-0 w-[300px] md:w-[350px] group relative snap-center py-4 career-card">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
-                    <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
-                      <div class="absolute inset-0 z-0">
-                        <img src="assets/automotive-vfx.webp" alt="Finance"
-                          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
-                        </div>
-                      </div>
-                      <!-- Base Banner -->
+                  <!-- Item 4 Finance -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
                       <div
-                        class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                        <span class="text-white font-normal text-sm tracking-wide">Finance</span>
-                        <span class="text-white font-bold text-xl mb-0.5">+</span>
-                      </div>
-                      <!-- Expanded Overlay -->
-                      <div
-                        class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
-                        <div
-                          class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                          <span class="text-white font-normal text-sm tracking-tight">Finance</span>
-                          <span class="text-white font-black text-2xl leading-none mb-1">−</span>
-                        </div>
-                        <div class="p-7">
-                          <ul class="space-y-4">
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Data Visualizer
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              FinTech UI Designer
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Corporate Motion Artist
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Strategic Graphics
-                            </li>
-                          </ul>
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/automotive-vfx.webp" alt="Finance"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Finance</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Finance</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Data Visualizer
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  FinTech UI Designer
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Corporate Motion Artist
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Strategic Graphics
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
 
-                <!-- Item 5 Entertainment -->
-                <div class="flex-shrink-0 w-[300px] md:w-[350px] group relative snap-center py-4 career-card">
-                  <div
-                    class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
-                    <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
-                      <div class="absolute inset-0 z-0">
-                        <img src="assets/ar-vr-vfx.webp" alt="Entertainment"
-                          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
-                        </div>
-                      </div>
-                      <!-- Base Banner -->
+                  <!-- Item 5 Entertainment -->
+                  <li class="splide__slide">
+                    <div class="w-[300px] md:w-[350px] group relative py-4 career-card">
                       <div
-                        class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
-                        <span class="text-white font-normal text-sm tracking-wide">Entertainment</span>
-                        <span class="text-white font-bold text-xl mb-0.5">+</span>
-                      </div>
-                      <!-- Expanded Overlay -->
-                      <div
-                        class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
-                        <div
-                          class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
-                          <span class="text-white font-normal text-sm tracking-tight">Entertainment</span>
-                          <span class="text-white font-black text-2xl leading-none mb-1">−</span>
-                        </div>
-                        <div class="p-7">
-                          <ul class="space-y-4">
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              VFX Lead Artist
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Character Animator
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Matte Painter
-                            </li>
-                            <li
-                              class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
-                              <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10"></div>
-                              Concept Artist
-                            </li>
-                          </ul>
+                        class="relative bg-white border border-slate-200 rounded-[2.5rem] p-3.5 h-[440px] md:h-[500px] flex flex-col shadow-xl transition-all duration-500 hover:border-[#F58220]/50">
+                        <div class="relative flex-1 rounded-[1.8rem] overflow-hidden shadow-inner">
+                          <div class="absolute inset-0 z-0">
+                            <img src="assets/ar-vr-vfx.webp" alt="Entertainment"
+                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40">
+                            </div>
+                          </div>
+                          <!-- Base Banner -->
+                          <div
+                            class="absolute bottom-3 left-3 right-3 h-14 bg-[#04213d] rounded-xl flex items-center justify-between px-5 cursor-pointer z-10 border border-white/5 transition-all duration-300 hover:bg-[#062c52] career-base-banner career-expand-btn">
+                            <span class="text-white font-normal text-sm tracking-wide">Entertainment</span>
+                            <span class="text-white font-bold text-xl mb-0.5">+</span>
+                          </div>
+                          <!-- Expanded Overlay -->
+                          <div
+                            class="absolute inset-x-0 bottom-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-20 bg-[#04213d] rounded-t-2xl shadow-[0_-15px_40px_rgba(0,0,0,0.6)] h-0 translate-y-full opacity-0 pointer-events-none career-overlay">
+                            <div
+                              class="h-14 flex items-center justify-between px-6 cursor-pointer border-b border-white/5 career-collapse-btn">
+                              <span class="text-white font-normal text-sm tracking-tight">Entertainment</span>
+                              <span class="text-white font-black text-2xl leading-none mb-1">−</span>
+                            </div>
+                            <div class="p-7">
+                              <ul class="space-y-4">
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  VFX Lead Artist
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Character Animator
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Matte Painter
+                                </li>
+                                <li
+                                  class="flex items-center gap-3.5 text-white text-xs md:text-sm font-normal tracking-tight">
+                                  <div class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0 ring-2 ring-white/10">
+                                  </div>
+                                  Concept Artist
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </div>
             </div>
             <!-- Navigation Buttons -->

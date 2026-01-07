@@ -110,8 +110,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (swNext) swNext.addEventListener('click', () => softwareSplide.go('>'));
   }
 
-  // Career Carousel
-  initCarousel('career-list', 'career-prev', 'career-next', (c) => c.clientWidth / 2);
+  // Career Carousel (Splide)
+  if (document.querySelector('#career-splide')) {
+    const careerSplide = new Splide('#career-splide', {
+      type: 'loop',
+      autoWidth: true,
+      focus: 'center',
+      gap: '2rem',
+      pagination: false,
+      arrows: false,
+      breakpoints: {
+        768: {
+          gap: '1rem',
+        }
+      }
+    });
+    careerSplide.mount();
+
+    const carPrev = document.getElementById('career-prev');
+    const carNext = document.getElementById('career-next');
+    if (carPrev) carPrev.addEventListener('click', () => careerSplide.go('<'));
+    if (carNext) carNext.addEventListener('click', () => careerSplide.go('>'));
+  }
 
   // Students Speak Carousel
   initCarousel('stories-list', 'stories-prev', 'stories-next', (c) => {
