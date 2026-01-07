@@ -87,8 +87,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Software Carousel
-  initCarousel('software-list', 'software-prev', 'software-next', (c) => c.clientWidth / 2);
+  // Software Carousel (Splide)
+  if (document.querySelector('#software-splide')) {
+    const softwareSplide = new Splide('#software-splide', {
+      type: 'loop',
+      autoWidth: true,
+      focus: 'center',
+      gap: '1rem',
+      pagination: false,
+      arrows: false,
+      breakpoints: {
+        768: {
+          gap: '2rem',
+        }
+      }
+    });
+    softwareSplide.mount();
+
+    const swPrev = document.getElementById('software-prev');
+    const swNext = document.getElementById('software-next');
+    if (swPrev) swPrev.addEventListener('click', () => softwareSplide.go('<'));
+    if (swNext) swNext.addEventListener('click', () => softwareSplide.go('>'));
+  }
 
   // Career Carousel
   initCarousel('career-list', 'career-prev', 'career-next', (c) => c.clientWidth / 2);
