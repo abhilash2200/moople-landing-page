@@ -21,19 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scrollY > 20) {
       header.classList.remove('bg-transparent', 'border-transparent');
       header.classList.add(
-        'bg-[#020617]/80',
+        'bg-[#fff]/50',
         'backdrop-blur-xl',
         'border-slate-800/50',
-        'shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]'
+        'shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]'
       );
       headerTitle?.classList.replace('text-lg', 'text-base');
     } else {
       header.classList.add('bg-transparent', 'border-transparent');
       header.classList.remove(
-        'bg-[#020617]/80',
+        'bg-[#fff]/50',
         'backdrop-blur-xl',
         'border-slate-800/50',
-        'shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]'
+        'shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]'
       );
       headerTitle?.classList.replace('text-base', 'text-lg');
     }
