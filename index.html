@@ -1406,50 +1406,39 @@
 
         <!-- CTA Banner Section -->
         <section class="py-10 relative">
-          <div class="max-w-7xl mx-auto relative group">
-            <!-- Animated Background Glow -->
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-[#F58220]/20 via-orange-500/10 to-[#F58220]/20 rounded-[40px] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-1000">
-            </div>
-
-            <!-- The Banner Card -->
-            <div
-              class="relative bg-white border border-slate-200 rounded-[40px] p-10 md:p-16 overflow-hidden flex flex-col items-center text-center shadow-xl">
-              <!-- Subtle Accent Pattern -->
-              <div class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none perspective-grid">
-              </div>
-
-              <div class="relative z-10 max-w-3xl">
-                <h2 class="text-[50px] font-bold text-[#020617] mb-6 leading-[1.1] tracking-tight">
-                  Train with <span class="text-[#F58220]">Industry Expectations</span> in Mind
-                </h2>
-
-                <p
-                  class="text-slate-600 text-base md:text-lg lg:text-xl font-medium mb-10 leading-relaxed max-w-2xl mx-auto">
-                  Our programs focus on building skills employers look for.
-                  <span class="text-slate-900 font-bold"> Trusted by top companies </span> for quality talent.
-                  Prepare for your dream career today.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                  <button onclick="openModal()"
-                    class="w-full sm:w-auto px-12 py-5 bg-[#F58220] hover:bg-[#ff8c2b] text-white font-bold text-xl rounded-2xl transition-all shadow-[0_10px_40px_rgba(245,130,32,0.4)] active:scale-95 flex items-center justify-center gap-3 group/btn">
-                    Enroll Today
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </button>
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="relative bg-white border border-slate-200 rounded-[40px] p-8 overflow-hidden shadow-xl">
+              <div class="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                <div class="w-full lg:w-1/2 flex justify-center relative">
+                  <div class="relative w-full max-w-md">
+                    <img src="assets/camera.webp" alt="Industry Professional Character"
+                      class="relative w-full h-auto object-contain rounded-xl" />
+                  </div>
                 </div>
-              </div>
 
-              <!-- Decorative Corner Accents -->
-              <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#F58220]/20 to-transparent blur-2xl">
-              </div>
-              <div
-                class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-500/10 to-transparent blur-2xl">
+                <div class="w-full lg:w-1/2 flex flex-col">
+                  <h2
+                    class="text-2xl md:text-5xl lg:text-6xl font-bold text-[#020617] mb-6 leading-[1.1] tracking-tight">
+                    Train with <span class="text-[#F58220]">Industry Expectations</span> in Mind
+                  </h2>
+                  <p class="text-slate-600 text-base md:text-lg mb-8 leading-relaxed">
+                    Our programs target developing skills that employers value. Loved by employers for delivering
+                    quality candidates. Get ready to pursue your desired job.
+                  </p>
+                  <div class="flex flex-col gap-3">
+                    <button onclick="openModal()"
+                      class="w-full sm:w-auto px-12 py-5 bg-[#F58220] hover:bg-[#ff8c2b] text-white font-bold text-xl rounded-2xl transition-all shadow-[0_10px_40px_rgba(245,130,32,0.4)] active:scale-95 flex items-center justify-center gap-3 group/btn">
+                      Enroll Today
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 transition-transform group-hover/btn:translate-x-1" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                          d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
@@ -2675,5 +2664,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
+</html>
 
 </html>
