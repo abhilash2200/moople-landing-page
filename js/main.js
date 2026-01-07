@@ -122,46 +122,202 @@ document.addEventListener('DOMContentLoaded', () => {
   ========================== */
   const accordionItems = qsa('.semester-item');
 
-  const closeAccordion = item => setAccordionState(item, false);
-
+  /**
+   * CRITICAL FIX: Proper accordion state management with correct height transitions
+   * 
+   * ROOT CAUSES IDENTIFIED:
+   * 1. scrollHeight measured AFTER removing max-h-0 class → instant jump
+   * 2. No proper sequencing → race conditions with CSS transitions
+   * 3. Missing toggle-close → clicking open item doesn't close it
+   * 4. No keyboard support → accessibility violation
+   * 5. No debouncing → rapid clicks cause inconsistent state
+   * 6. Height calculation timing → browser hasn't recalculated layout
+   */
   const setAccordionState = (item, open, skipTransition = false) => {
     const btn = qs('.accordion-btn', item);
     const content = qs('.accordion-content', item);
     if (!btn || !content) return;
 
+    // Update ARIA state immediately (source of truth)
     btn.setAttribute('aria-expanded', open);
 
     if (open) {
-      content.classList.remove('pointer-events-none', 'opacity-0', 'max-h-0');
-      content.classList.add('pl-6'); // Add left padding when open
-      content.style.maxHeight = skipTransition
-        ? `${content.scrollHeight}px`
-        : `${content.scrollHeight}px`;
+      // FIX: Measure height BEFORE removing constraints
+      // Temporarily remove max-h-0 to measure, but keep it visually hidden
+      const hadMaxH0 = content.classList.contains('max-h-0');
+      let targetHeight = 0;
+
+      if (hadMaxH0) {
+        // Store current inline style
+        const currentMaxHeight = content.style.maxHeight;
+        // Temporarily remove height constraint to measure
+        content.classList.remove('max-h-0');
+        content.style.maxHeight = 'none';
+        // Force synchronous layout recalculation
+        void content.offsetHeight;
+        // Measure actual content height
+        targetHeight = content.scrollHeight;
+        // Immediately restore constraint before browser paints
+        content.style.maxHeight = '0px';
+        content.classList.add('max-h-0');
+        // Force reflow to ensure 0px is applied
+        void content.offsetHeight;
+      } else {
+        // Already measured or partially open
+        content.style.maxHeight = 'none';
+        void content.offsetHeight;
+        targetHeight = content.scrollHeight;
+        content.style.maxHeight = '0px';
+        void content.offsetHeight;
+      }
+
+      // Remove pointer-events-none first (doesn't affect layout)
+      content.classList.remove('pointer-events-none');
+
+      if (skipTransition) {
+        // Initial load: set immediately without transition
+        content.style.maxHeight = `${targetHeight}px`;
+        content.classList.remove('max-h-0', 'opacity-0');
+        content.classList.add('pl-6', 'opacity-100');
+      } else {
+        // Animated open: sequence properly
+        // Step 1: Remove max-h-0 class (inline style will override)
+        content.classList.remove('max-h-0');
+        // Step 2: Set target height in next frame to trigger transition
+        requestAnimationFrame(() => {
+          content.style.maxHeight = `${targetHeight}px`;
+          // Step 3: Fade in opacity after height starts animating
+          requestAnimationFrame(() => {
+            content.classList.remove('opacity-0');
+            content.classList.add('opacity-100', 'pl-6');
+          });
+        });
+      }
     } else {
-      content.style.maxHeight = '0px';
-      content.classList.add('opacity-0', 'pointer-events-none');
-      content.classList.remove('pl-6'); // Remove left padding when closed
+      // Closing: set height to 0 first, then update classes
+      const currentHeight = content.scrollHeight;
+      content.style.maxHeight = `${currentHeight}px`;
+      // Force reflow to ensure height is set
+      void content.offsetHeight;
+
+      // Set to 0 in next frame to trigger transition
+      requestAnimationFrame(() => {
+        content.style.maxHeight = '0px';
+        // Update classes after transition starts
+        setTimeout(() => {
+          content.classList.add('opacity-0', 'pointer-events-none');
+          // Add max-h-0 back after transition completes
+          setTimeout(() => {
+            if (btn.getAttribute('aria-expanded') === 'false') {
+              content.classList.add('max-h-0');
+            }
+          }, 500); // Match transition duration
+        }, 50);
+        content.classList.remove('opacity-100', 'pl-6');
+      });
     }
   };
 
+  // Debounce helper to prevent rapid-fire clicks
+  const debounce = (fn, delay = 100) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => fn(...args), delay);
+    };
+  };
+
+  // Handle accordion toggle with proper state management
+  const handleAccordionToggle = (item, e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    const btn = qs('.accordion-btn', item);
+    if (!btn) return;
+
+    const isCurrentlyOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    if (isCurrentlyOpen) {
+      // Toggle-close: clicking open item closes it
+      setAccordionState(item, false);
+    } else {
+      // Close all other items first
+      accordionItems.forEach(otherItem => {
+        const otherBtn = qs('.accordion-btn', otherItem);
+        if (otherBtn && otherBtn.getAttribute('aria-expanded') === 'true') {
+          setAccordionState(otherItem, false);
+        }
+      });
+
+      // Small delay to ensure other items start closing first
+      setTimeout(() => {
+        setAccordionState(item, true);
+      }, 10);
+    }
+  };
+
+  // Debounced toggle handler
+  const debouncedToggle = debounce(handleAccordionToggle, 150);
+
+  // Initialize accordion items
   accordionItems.forEach((item, i) => {
     const btn = qs('.accordion-btn', item);
     const content = qs('.accordion-content', item);
     if (!btn || !content) return;
 
+    // Ensure button type (prevents form submission)
     btn.type = 'button';
+
+    // Setup ARIA attributes
+    const contentId = content.id || `accordion-content-${i}`;
+    content.id = contentId;
+    btn.setAttribute('aria-controls', contentId);
     btn.setAttribute('aria-expanded', 'false');
-    btn.setAttribute('aria-controls', content.id || `accordion-${i}`);
-    content.id = btn.getAttribute('aria-controls');
 
-    if (i === 0) setAccordionState(item, true, true);
+    // Initial state: open first item without transition
+    if (i === 0) {
+      setAccordionState(item, true, true);
+    }
 
+    // Click handler with scroll prevention
     btn.addEventListener('click', e => {
-      e.preventDefault();
-      accordionItems.forEach(closeAccordion);
-      setAccordionState(item, true);
+      debouncedToggle(item, e);
+    });
+
+    // Keyboard support (Enter and Space)
+    btn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        debouncedToggle(item, e);
+      }
     });
   });
+
+  // Handle window resize: update open accordion heights
+  const handleResize = debounce(() => {
+    accordionItems.forEach(item => {
+      const btn = qs('.accordion-btn', item);
+      const content = qs('.accordion-content', item);
+      if (btn && btn.getAttribute('aria-expanded') === 'true') {
+        // Temporarily remove max-height to get accurate measurement
+        const currentMaxHeight = content.style.maxHeight;
+        content.style.maxHeight = 'none';
+        const newHeight = content.scrollHeight;
+        content.style.maxHeight = currentMaxHeight;
+        // Update height
+        requestAnimationFrame(() => {
+          if (btn.getAttribute('aria-expanded') === 'true') {
+            content.style.maxHeight = `${newHeight}px`;
+          }
+        });
+      }
+    });
+  }, 150);
+
+  window.addEventListener('resize', handleResize);
 
   /* =========================
      Career Card Expand
@@ -170,15 +326,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = qs('.career-overlay', card);
     const base = qs('.career-base-banner', card);
 
+    if (!overlay || !base) return;
+
     qs('.career-expand-btn', card)?.addEventListener('click', e => {
+      e.preventDefault();
       e.stopPropagation();
-      overlay.classList.remove('h-0', 'translate-y-full', 'opacity-0');
+      
+      // Expand overlay: remove closed state classes and add open state classes
+      overlay.classList.remove('h-0', 'translate-y-full', 'opacity-0', 'pointer-events-none');
+      overlay.classList.add('h-[75%]', 'translate-y-0', 'opacity-100');
+      
+      // Hide base banner
       base.classList.add('opacity-0', 'pointer-events-none');
     });
 
     qs('.career-collapse-btn', card)?.addEventListener('click', e => {
+      e.preventDefault();
       e.stopPropagation();
-      overlay.classList.add('h-0', 'translate-y-full', 'opacity-0');
+      
+      // Collapse overlay: remove open state classes and add closed state classes
+      overlay.classList.remove('h-[75%]', 'translate-y-0', 'opacity-100');
+      overlay.classList.add('h-0', 'translate-y-full', 'opacity-0', 'pointer-events-none');
+      
+      // Show base banner
       base.classList.remove('opacity-0', 'pointer-events-none');
     });
   });
