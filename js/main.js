@@ -81,11 +81,29 @@ document.addEventListener('DOMContentLoaded', () => {
       focus: 'center',
       gap: '1rem',
       pagination: false,
-      arrows: false,
+      arrows: true,
       breakpoints: { 768: { gap: '2rem' } }
     },
-    '#software-prev',
-    '#software-next'
+    null,
+    null
+  );
+
+  initSplide(
+    '#courses-splide',
+    {
+      type: 'slide',
+      perPage: 4,
+      perMove: 1,
+      gap: '2rem',
+      pagination: true,
+      arrows: false,
+      breakpoints: {
+        1024: { perPage: 2, arrows: false },
+        768: { perPage: 1, gap: '1.5rem', arrows: true }
+      }
+    },
+    '#courses-prev',
+    '#courses-next'
   );
 
   initSplide(
@@ -96,11 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
       focus: 'center',
       gap: '2rem',
       pagination: false,
-      arrows: false,
+      arrows: true,
       breakpoints: { 768: { gap: '1rem' } }
     },
-    '#career-prev',
-    '#career-next'
+    null,
+    null
   );
 
   initSplide(
@@ -111,10 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
       focus: 'center',
       gap: '1.5rem',
       pagination: false,
-      arrows: false
+      arrows: true
     },
-    '#stories-prev',
-    '#stories-next'
+    null,
+    null
   );
 
   /* =========================
@@ -318,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 150);
 
   window.addEventListener('resize', handleResize);
+  
 
   /* =========================
      Career Card Expand

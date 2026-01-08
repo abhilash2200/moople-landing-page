@@ -1,0 +1,207 @@
+/* ============================================
+   Custom CSS for Moople Animation & Film
+   ============================================ */
+
+/* Base Styles */
+body {
+  font-family: "Kanit", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ffd6a8;
+}
+
+h2 {
+  line-height: 40px;
+}
+
+/* Perspective Grid */
+.perspective-grid {
+  background-image: linear-gradient(rgba(51, 65, 85, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(51, 65, 85, 0.15) 1px, transparent 1px);
+  background-size: 80px 80px;
+  perspective: 1200px;
+  transform: rotateX(25deg);
+  transform-origin: top;
+}
+
+/* Scrollbar Hide */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* ============================================
+   Gradient Fixes for Flowbite Compatibility
+   ============================================ */
+
+/* Dark Blue Gradient - Specific Fixes */
+.bg-gradient-to-r.from-\[#0A2540\].to-\[#1e293b\] {
+  background: linear-gradient(to right, #0a2540, #1e293b) !important;
+  background-image: linear-gradient(to right, #0a2540, #1e293b) !important;
+}
+
+/* White to Slate Gradient */
+.bg-gradient-to-r.from-white.to-slate-200 {
+  background: linear-gradient(to right, #ffffff, rgb(226, 232, 240)) !important;
+  background-image: linear-gradient(
+    to right,
+    #ffffff,
+    rgb(226, 232, 240)
+  ) !important;
+}
+
+/* Hover State for Button Gradient */
+.group:hover .bg-gradient-to-r.from-white.to-slate-200,
+.group:hover .group-hover\:from-blue-50.group-hover\:to-white {
+  background: linear-gradient(to right, rgb(239, 246, 255), #ffffff) !important;
+  background-image: linear-gradient(
+    to right,
+    rgb(239, 246, 255),
+    #ffffff
+  ) !important;
+}
+
+/* General Gradient Utilities */
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-tr {
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+/* ============================================
+   Flowbite Override Styles (Loaded after Flowbite)
+   ============================================ */
+
+/* Override Flowbite and ensure gradients work with !important */
+.bg-gradient-to-r {
+  background-image: linear-gradient(
+    to right,
+    var(--tw-gradient-stops)
+  ) !important;
+  background: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+}
+
+.bg-gradient-to-t {
+  background-image: linear-gradient(
+    to top,
+    var(--tw-gradient-stops)
+  ) !important;
+  background: linear-gradient(to top, var(--tw-gradient-stops)) !important;
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(
+    to bottom,
+    var(--tw-gradient-stops)
+  ) !important;
+  background: linear-gradient(to bottom, var(--tw-gradient-stops)) !important;
+}
+
+.bg-gradient-to-tr {
+  background-image: linear-gradient(
+    to top right,
+    var(--tw-gradient-stops)
+  ) !important;
+  background: linear-gradient(
+    to top right,
+    var(--tw-gradient-stops)
+  ) !important;
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--tw-gradient-stops)
+  ) !important;
+  background: linear-gradient(
+    to bottom right,
+    var(--tw-gradient-stops)
+  ) !important;
+}
+
+/* Specific gradient color fixes - direct color values - HIGHEST PRIORITY */
+[class*="from-[#0A2540]"][class*="to-[#1e293b]"],
+[class*="from-\\[#0A2540\\]"][class*="to-\\[#1e293b\\]"],
+.bg-gradient-to-r.from-\[#0A2540\].to-\[#1e293b\],
+div.bg-gradient-to-r.from-\[#0A2540\].to-\[#1e293b\],
+#marquee-section,
+#enrollment-modal [class*="from-[#0A2540]"],
+.container [class*="from-[#0A2540]"][class*="to-[#1e293b]"] {
+  background: linear-gradient(to right, #0a2540, #1e293b) !important;
+  background-image: linear-gradient(to right, #0a2540, #1e293b) !important;
+  background-color: #0a2540 !important;
+}
+
+.bg-gradient-to-r.from-white.to-slate-200,
+div.bg-gradient-to-r.from-white.to-slate-200 {
+  background: linear-gradient(to right, #ffffff, rgb(226, 232, 240)) !important;
+  background-image: linear-gradient(
+    to right,
+    #ffffff,
+    rgb(226, 232, 240)
+  ) !important;
+}
+
+.group:hover
+  .bg-gradient-to-r.from-white.to-slate-200.group-hover\:from-blue-50.group-hover\:to-white,
+.group:hover .bg-gradient-to-r.group-hover\:from-blue-50.group-hover\:to-white {
+  background: linear-gradient(to right, rgb(239, 246, 255), #ffffff) !important;
+  background-image: linear-gradient(
+    to right,
+    rgb(239, 246, 255),
+    #ffffff
+  ) !important;
+}
+
+/* ============================================
+           Form Select Dropdown Fix
+           ============================================ */
+
+/* Ensure select dropdowns appear above other elements */
+select {
+  position: relative;
+  z-index: 50;
+}
+
+/* Fix for select dropdowns in form containers */
+#enrollment-form select {
+  z-index: 50;
+}
+
+/* Ensure select dropdown options are visible */
+select option {
+  z-index: 9999;
+  position: relative;
+}
