@@ -60,6 +60,39 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updateHeaderState);
   updateHeaderState();
 
+
+  (function () {
+    // Force-unlock scroll if any library locks it
+    const unlockScroll = () => {
+      document.body.style.overflow = "auto";
+      document.body.style.position = "static";
+      document.documentElement.style.overflow = "auto";
+    };
+
+    // Run immediately
+    unlockScroll();
+
+    // Run after select interaction
+    document.addEventListener("change", (e) => {
+      if (e.target.tagName === "SELECT") {
+        setTimeout(unlockScroll, 0);
+        setTimeout(unlockScroll, 50);
+        setTimeout(unlockScroll, 150);
+      }
+    });
+
+    // Watch for Flowbite re-locking scroll
+    const observer = new MutationObserver(unlockScroll);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["style", "class"],
+    });
+
+    // Safety net for mobile browsers
+    window.addEventListener("touchend", unlockScroll);
+    window.addEventListener("click", unlockScroll);
+  })();
+
   /* =========================
      Reusable Splide Initialiser
   ========================== */

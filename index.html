@@ -261,7 +261,8 @@
         <section class="pb-16 mt-8">
           <div class="w-full px-4 md:px-12 lg:px-24">
             <div
-              class="container mx-auto bg-white/90 backdrop-blur-xl rounded-2xl lg:rounded-[40px] shadow-2xl border border-slate-200 relative z-10">
+              class="container mx-auto bg-white/90 backdrop-blur-xl rounded-2xl lg:rounded-[40px] shadow-2xl border border-slate-200 relative z-10"
+              style="overflow: visible;">
               <!-- Header Section -->
               <div
                 class="bg-gradient-to-r from-[#0A2540] to-[#1e293b] md:py-2 py-3 text-center border-b border-slate-800 rounded-t-2xl lg:rounded-t-[40px] overflow-hidden"
@@ -274,6 +275,7 @@
               <!-- Form Body -->
               <form id="enrollment-form"
                 class="p-5 md:p-12 flex flex-wrap lg:flex-nowrap items-start gap-10 relative z-10">
+
                 <div class="w-full lg:flex-1 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
                   <!-- Input Name -->
                   <div class="flex flex-col gap-2">
@@ -301,12 +303,12 @@
                   </div>
 
                   <!-- Select Qualification -->
-                  <div class="flex flex-col gap-2 relative z-50">
+                  <div class="flex flex-col gap-2 relative" style="z-index: 9999;">
                     <label for="qualification"
                       class="block mb-2 text-sm font-medium text-slate-700 sr-only">Qualification</label>
                     <select id="qualification" name="qualification"
-                      class="block w-full px-5 py-2.5 text-base text-slate-900 border border-slate-300 rounded-lg bg-slate-50 focus:ring-2 focus:ring-[#F58220]/50 focus:border-[#F58220] transition-all cursor-pointer relative z-50"
-                      required>
+                      class="block w-full px-5 py-2.5 text-base text-slate-900 border border-slate-300 rounded-lg bg-slate-50 focus:ring-2 focus:ring-[#F58220]/50 focus:border-[#F58220] transition-all cursor-pointer"
+                      style="z-index: 9999;" required>
                       <option value="" disabled selected>Select Qualification</option>
                       <option value="10th">10th</option>
                       <option value="12th">12th</option>
@@ -316,12 +318,12 @@
                   </div>
 
                   <!-- Select Branch -->
-                  <div class="flex flex-col gap-2 md:col-span-2 relative z-50">
+                  <div class="flex flex-col gap-2 md:col-span-2 relative" style="z-index: 9998;">
                     <label for="branch" class="block mb-2 text-sm font-medium text-slate-700 sr-only">Campus/Brand
                       Preference</label>
                     <select id="branch" name="branch"
-                      class="block w-full px-5 py-2.5 text-base text-slate-900 border border-slate-300 rounded-lg bg-slate-50 focus:ring-2 focus:ring-[#F58220]/50 focus:border-[#F58220] transition-all cursor-pointer relative z-50"
-                      required>
+                      class="block w-full px-5 py-2.5 text-base text-slate-900 border border-slate-300 rounded-lg bg-slate-50 focus:ring-2 focus:ring-[#F58220]/50 focus:border-[#F58220] transition-all cursor-pointer"
+                      style="z-index: 9998;" required>
                       <option value="" disabled selected>Select Branch</option>
                       <option value="Baguiati">Baguiati</option>
                       <option value="Bardhaman">Bardhaman</option>
@@ -737,7 +739,7 @@
                 <span class="text-[#F58220]">B.Sc</span> <span class="text-[#020617]">in Animation Filmmaking</span>
               </h2>
               <p class="text-slate-600 text-[13px] lg:text-[17px] leading-[20px] lg:leading-[25px]">
-                Moople, in alliance with esteemed colleges, provides a "Full-Time 4-year Degree in Animation &
+                Moople, in alliance with esteemed colleges, provides a "Full-Time 4-year Degree in Animation
                 Filmmaking." Tied up with the affiliation of "MAKAUT in association with the Institute of Management
                 Study and Dr B.C. Roy Academy of Professional Courses," the animation degree course has been designed
                 keeping in mind the demands of the industry.
@@ -1434,26 +1436,23 @@
 
         <!-- CTA Banner Section -->
         <section class="py-10 relative">
-          <div class="max-w-7xl mx-auto px-4">
-            <div class="relative bg-white border border-slate-200 rounded-[40px] p-8 overflow-hidden shadow-xl">
+          <div class="max-w-[1200px] px-4 mx-auto">
+            <div
+              class="relative border border-slate-200 rounded-[40px] p-8 py-16 overflow-hidden shadow-xl bg-cover bg-center bg-no-repeat"
+              style="background-image: url('assets/banner-bg.webp');">
+              <!-- Overlay for text readability -->
+              <div class="absolute inset-0 bg-[#000000]/60 backdrop-blur-sm rounded-[40px]"></div>
               <div class="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                <div class="w-full lg:w-1/2 flex justify-start relative">
-                  <div class="relative w-full max-w-md">
-                    <img src="assets/camera.webp" alt="Industry Professional Character"
-                      class="relative w-full h-auto object-contain rounded-xl" />
-                  </div>
-                </div>
-
-                <div class="w-full lg:w-1/2 flex flex-col">
+                <div class="w-full md:w-full mx-auto flex flex-col items-center">
                   <h2
-                    class="text-2xl md:text-3xl lg:text-[40px] font-semibold text-[#020617] mb-6 leading-[1.1] tracking-tight">
+                    class="text-2xl md:text-3xl lg:text-[40px] font-semibold text-white text-center mb-6 leading-[1.1] tracking-tight">
                     Train with <span class="text-[#F58220]">Industry Expectations</span> in Mind
                   </h2>
-                  <p class="text-slate-600 text-base md:text-lg mb-8 leading-relaxed">
+                  <p class="text-white max-w-[65%] mx-auto text-base text-center md:text-lg mb-8 leading-relaxed">
                     Our programs target developing skills that employers value. Loved by employers for delivering
                     quality candidates. Get ready to pursue your desired job.
                   </p>
-                  <div class="flex flex-col gap-3">
+                  <div class="flex justify-center gap-3">
                     <button onclick="openModal()"
                       class="w-full sm:w-auto px-12 py-5 bg-[#F58220] hover:bg-[#ff8c2b] text-white font-bold text-xl rounded-2xl transition-all shadow-[0_10px_40px_rgba(245,130,32,0.4)] active:scale-95 flex items-center justify-center gap-3 group/btn">
                       Enroll Today
@@ -1469,6 +1468,33 @@
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+
+        <!-- projects section -->
+        <section class="py-10 relative">
+          <div class="container px-4 mx-auto">
+            <h2
+              class="text-2xl md:text-3xl lg:text-[40px] font-semibold text-[#020617] text-center mb-6 leading-[1.1] tracking-tight">
+              <span class="text-[#F58220]">Our </span> Projects
+            </h2>
+
+            <div class="w-full mb-10">
+              <img src="assets/banner-bg.webp" alt="Projects" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-center gap-3">
+              <button onclick="openModal()"
+                class="w-full sm:w-auto px-12 py-5 bg-[#F58220] hover:bg-[#ff8c2b] text-white font-bold text-xl rounded-2xl transition-all shadow-[0_10px_40px_rgba(245,130,32,0.4)] active:scale-95 flex items-center justify-center gap-3 group/btn">
+                Enroll Today
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+            </div>
+
           </div>
         </section>
 

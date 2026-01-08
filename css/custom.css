@@ -7,6 +7,7 @@ body {
   font-family: "Kanit", sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: #ffd6a8;
+  overflow: auto !important;
 }
 
 h2 {
@@ -197,11 +198,28 @@ select {
 
 /* Fix for select dropdowns in form containers */
 #enrollment-form select {
-  z-index: 50;
+  z-index: 9999 !important;
+  position: relative;
 }
 
 /* Ensure select dropdown options are visible */
 select option {
   z-index: 9999;
+  position: relative;
+}
+
+/* Fix form container to allow dropdown overflow */
+#enrollment-form {
+  overflow: visible !important;
+}
+
+/* Ensure form container doesn't clip dropdowns */
+#enrollment-form > div {
+  overflow: visible !important;
+}
+
+/* Fix for select dropdowns - ensure they render outside container */
+#enrollment-form select:focus {
+  z-index: 99999 !important;
   position: relative;
 }
