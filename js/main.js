@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
       perPage: 4,
       perMove: 1,
       gap: '2rem',
-      pagination: true,
+      pagination: false,
       arrows: false,
       breakpoints: {
         1024: { perPage: 2, arrows: false },
