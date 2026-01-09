@@ -168,6 +168,24 @@ document.addEventListener('DOMContentLoaded', () => {
     null
   );
 
+  initSplide(
+    '#projects-splide',
+    {
+      type: 'slide',
+      perPage: 4,
+      perMove: 1,
+      gap: '1.25rem',
+      pagination: false,
+      arrows: true,
+      breakpoints: {
+        1024: { perPage: 2, gap: '1rem' },
+        768: { perPage: 1, gap: '1rem', arrows: true }
+      }
+    },
+    null,
+    null
+  );
+
   /* =========================
      Accordion
   ========================== */
